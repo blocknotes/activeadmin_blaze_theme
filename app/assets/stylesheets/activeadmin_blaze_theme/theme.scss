@@ -1,0 +1,365 @@
+@import 'blaze/blaze';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+// main variables
+$bg-form1: #f4f4f4 !default;
+$bg-form2: darken($bg-form1, 3%) !default;
+$bg-form3: darken($bg-form1, 6%) !default;
+$bg-form4: darken($bg-form1, 9%) !default;
+$bg-header: $color-brand !default;
+$bg-inputs: #fff !default;
+$fg-box-title: #fff !default;
+$fg-link2: #eee !default;
+$fg-table-borders: #e4e4e4 !default;
+
+// other variables
+$height-inputs: 25px !default;
+$text-shadow: #000 !default;
+
+// active_admin theme styles
+body.active_admin {
+  font-family: 'Roboto', sans-serif;
+
+  // generics
+  .button-base {
+    @extend .c-button;
+    // @extend .c-button--rounded;
+    background-image: none;
+    box-shadow: initial;
+    text-shadow: $text-shadow 0 1px 0;
+  }
+
+  // forms
+  form {
+    // inputs
+    input[type='number'],
+    input[type='text'],
+    select,
+    textarea {
+      @extend .c-field;
+      background-color: $bg-inputs;
+      display: inline-block;
+      height: $height-inputs;
+    }
+
+    // buttons
+    button,
+    input[type='button'],
+    input[type='submit'],
+    &.filter_form a.clear_filters_btn,
+    fieldset.buttons li.cancel a,
+    fieldset.actions li.cancel a {
+      @extend .button-base;
+    }
+    .buttons, .actions {
+      button,
+      input[type='button'],
+      input[type='submit'] {
+        margin-right: 10px;
+      }
+    }
+    button:hover,
+    input[type='button']:hover,
+    input[type='submit']:hover,
+    &.filter_form a.clear_filters_btn:hover,
+    fieldset.buttons li.cancel a:hover,
+    fieldset.actions li.cancel a:hover {
+      background-image: none;
+    }
+
+    // submits
+    input[type='submit'] {
+      @extend .c-button--success;
+    }
+
+    // filter forms
+    &.filter_form {
+      .filter_form_field.filter_date_range {
+        input[type='number'],
+        input[type='text'] {
+          max-width: 100px;
+          width: auto;
+        }
+      }
+      .filter_form_field.select_and_search select {
+        background-color: $bg-inputs;
+      }
+    }
+
+    // fieldsets
+    fieldset {
+      &.buttons li, &.actions li {
+        float: initial;
+        display: inline-block;
+      }
+      &.inputs {
+        @extend .c-card;
+        @extend .u-high;
+        background-color: $bg-form1;
+        padding: 0;
+        input[type='number'],
+        input[type='text'],
+        select,
+        textarea {
+          background-color: $bg-inputs;
+          width: calc(80% - 22px);
+        }
+        select {
+          background-image: none;
+        }
+        label {
+          line-height: 26px;
+        }
+        > ol > .has_many_container > fieldset.inputs {
+          background-color: $bg-form2;
+          > ol > .has_many_container > fieldset.inputs {
+            background-color: $bg-form3;
+            > ol > .has_many_container > fieldset.inputs {
+              background-color: $bg-form4;
+            }
+          }
+        }
+        > legend {
+          @extend .c-card__item;
+          @extend .c-card__item--brand;
+          color: $fg-box-title;
+          padding: 8px 11px;
+          text-shadow: $text-shadow 0 1px 0;
+          > span {
+            background-color: transparent;
+            background-image: none;
+            border: 0 none;
+            box-shadow: initial;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            text-shadow: inherit;
+          }
+        }
+        // .boolean > label {  // not working
+        //   @extend .c-field;
+        //   @extend .c-field--choice;
+        // }
+        .button {
+          @extend .button-base;
+          &.has_many_add {
+            @extend .c-button--info;
+            display: inline-block;
+            &:hover {
+              background-image: none;
+            }
+          }
+          &.has_many_remove {
+            @extend .c-button--error;
+            display: inline-block;
+            &:hover {
+              background-image: none;
+            }
+          }
+        }
+        .fragment {
+          input[type='number'],
+          input[type='text'],
+          select {
+            width: auto;
+          }
+        }
+      }
+      ol {
+        padding: 1px;
+        > li {
+          padding: 1px;
+          > label {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  // header
+  #header {
+    background-color: $bg-header;
+    background-image: none;
+    border-bottom: 0 none;
+    padding: 0;
+    position: relative;
+    .header-item {
+      top: 0;
+    }
+  }
+
+  // navbar / menu
+  #tabs, #utility_nav {
+    @extend .c-nav;
+    @extend .c-nav--inline;
+    background-color: $bg-header;
+    > li {
+      @extend .c-nav__item;
+      float: left;
+      margin: 0;
+      &.current {
+        @extend .c-nav__item--active;
+        > a {
+          background: transparent;
+        }
+      }
+      > a {
+        display: block;
+        padding: 0;
+      }
+      > a:hover {
+        background: transparent;
+      }
+    }
+    > li:hover > a {
+      background: transparent;
+    }
+  }
+  #utility_nav {
+    position: absolute;
+    right: 0;
+    width: auto;
+  }
+
+  // sidebars
+  .sidebar_section {
+    @extend .c-card;
+    @extend .u-high;
+    .filter_form_field {
+      input[type='number'],
+      input[type='text'],
+      select,
+      textarea {
+        background-color: $bg-inputs;
+        background-image: none;
+      }
+    }
+    .panel_contents {
+      @extend .c-card__item;
+      padding: 5px 10px 10px 10px;
+    }
+    > h3 {
+      @extend .c-card__item;
+      @extend .c-card__item--brand;
+      background-image: none;
+      border: 0 none !important;
+      color: $fg-box-title;
+      padding: 8px 11px;
+      text-shadow: $text-shadow 0 1px 0;
+    }
+    input[type='submit'] {
+      @extend .c-button--info;
+    }
+  }
+
+  // tables
+  .table_tools {
+    a {
+      @extend .button-base;
+      margin-right: 10px;
+      span {
+        color: $fg-link2;
+      }
+    }
+    a:hover,
+    a.table_tools_button:hover,
+    .dropdown_menu_button:hover {
+      background-image: none;
+    }
+    .dropdown_menu_list a {
+      width: 100%;
+    }
+  }
+  .index_table {
+    @extend .c-table;
+    // @extend .c-table--striped;
+    // @extend .c-table--condensed;
+    > thead {
+      @extend .c-table__head;
+      > tr {
+        @extend .c-table__row;
+        @extend .c-table__row--heading;
+        > th {
+          @extend .c-table__cell;
+          margin-bottom: 0;
+          &.col-selectable > div {
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+    > tbody {
+      @extend .c-table__body;
+      border-left: 1px solid $fg-table-borders;
+      border-right: 1px solid $fg-table-borders;
+      > tr {
+        @extend .c-table__row;
+        > td {
+          @extend .c-table__cell;
+          &.col-selectable > div {
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+  }
+
+  // title bar
+  #title_bar {
+    .action_items span.action_item {
+      > a,
+      > .dropdown_menu > a {
+        @extend .button-base;
+        @extend .c-button--info;
+      }
+      > a:hover,
+      > .dropdown_menu > a:hover {
+        background-image: none;
+      }
+      a[data-method='delete'] {
+        @extend .c-button--error;
+      }
+    }
+  }
+
+  // main content
+  #main_content {
+    > .panel {
+      @extend .c-card;
+      @extend .u-high;
+      > h3 {
+        @extend .c-card__item;
+        @extend .c-card__item--brand;
+        background-image: none;
+        border: 0 none !important;
+        color: $fg-box-title;
+        padding: 8px 11px;
+        text-shadow: $text-shadow 0 1px 0;
+      }
+      > .panel_contents .actions {
+        margin: 0;
+      }
+      table {
+        margin: 0;
+      }
+    }
+  }
+
+  // dialogs
+  .ui-dialog > .ui-dialog-buttonpane button.ui-button {
+    @extend .button-base;
+    margin-right: 10px;
+    &:hover {
+      background-image: none;
+    }
+  }
+
+  // footer
+  #footer {
+    padding: 10px 0 0 0;
+    text-align: center;
+  }
+}

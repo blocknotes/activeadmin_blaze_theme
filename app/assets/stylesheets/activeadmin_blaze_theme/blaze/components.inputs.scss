@@ -1,0 +1,138 @@
+@import "mixins/components.inputs";
+
+.o-field {
+  position: relative;
+
+  .c-field--success ~ .c-icon {
+    color: $field-success-border-color;
+  }
+
+  .c-field--error ~ .c-icon {
+    color: $field-error-border-color;
+  }
+
+  .c-field:disabled ~ .c-icon {
+    color: $field-disabled-border-color;
+  }
+
+  .c-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $field-border-color;
+  }
+}
+
+.o-field--icon-right {
+  .c-field + .c-icon {
+    right: $field-padding;
+  }
+
+  .c-field {
+    padding-right: $field-padding * 4;
+  }
+}
+
+.o-field--icon-left {
+  .c-icon:first-child {
+    left: $field-padding;
+  }
+
+  .c-field {
+    padding-left: $field-padding * 4;
+  }
+}
+
+.c-fieldset,
+.c-fieldset.c-list {
+  display: block;
+  width: $fieldset-width;
+  margin: $fieldset-margin;
+  padding: $fieldset-padding;
+  border: $fieldset-border;
+}
+
+.c-fieldset__legend {
+  @include label;
+  padding: $legend-padding;
+}
+
+// LABELS
+.c-label {
+  @include label;
+}
+
+// TEXT FIELDS
+.c-field {
+  display: block;
+  width: 100%;
+  margin: $field-margin;
+  padding: $field-padding;
+  border: $field-border;
+  border-radius: $field-border-radius;
+  outline: 0;
+  background-color: $field-background-color;
+  font-family: inherit;
+  font-size: $field-font-size;
+  font-weight: $field-font-weight;
+  resize: vertical;
+  appearance: none;
+
+  &:focus {
+    border-color: $field-focus-border-color;
+    box-shadow: $field-focus-box-shadow;
+  }
+}
+
+// SELECTS, CHECKBOXES AND RADIOS
+select.c-field {
+  cursor: pointer;
+}
+
+// SELECTS
+select.c-field:not([multiple]) {
+  padding-right: 1em;
+  background: url("data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==") no-repeat 99% 50%;
+}
+
+// CHECKBOXES and RADIOs
+.c-field input {
+  margin-right: $checkbox-margin;
+  outline: 0;
+  font-size: $checkbox-font-size;
+}
+
+.c-field--label {
+  margin: $label-field-margin;
+}
+
+.c-field--error {
+  border-color: $field-error-border-color;
+  color: $field-error-color;
+}
+
+.c-field--success {
+  border-color: $field-success-border-color;
+  color: $field-success-color;
+}
+
+.c-field--choice {
+  border: $checkbox-border;
+  border-radius: 0;
+  background-color: $checkbox-background-color;
+}
+
+.c-fieldset--disabled .c-field,
+.c-fieldset:disabled .c-field,
+.c-field--disabled,
+.c-field:disabled {
+  @include field--disabled;
+
+  &.c-field--choice {
+    background-color: $checkbox-background-color;
+  }
+}
+
+.c-field input:disabled {
+  @include disabled;
+}

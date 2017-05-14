@@ -1,0 +1,22 @@
+@import "mixins/utilities.alignment";
+
+.u-centered {
+  @include centered;
+}
+
+.u-center-block {
+  @include center-block;
+}
+
+.u-center-block__content,
+.u-absolute-center {
+  @include center-block__content;
+}
+
+.u-center-block__content--vertical {
+  @include center-block__content--vertical;
+}
+
+.u-center-block__content--horizontal {
+  @include center-block__content--horizontal;
+}
