@@ -1,4 +1,4 @@
-# Active Admin Blaze Theme
+# Active Admin Blaze Theme [![Gem Version](https://badge.fury.io/rb/activeadmin_blaze_theme.svg)](https://badge.fury.io/rb/activeadmin_blaze_theme)
 
 A theme for Active Admin using [Blaze CSS](http://blazecss.com/)
 
@@ -45,3 +45,11 @@ Index:
 Edit:
 
 ![edit](screenshot2.jpg)
+
+## Contributors
+
+- [Mattia Roccoberton](http://blocknot.es) - creator, maintainer
+
+## License
+
+[MIT](LICENSE)
