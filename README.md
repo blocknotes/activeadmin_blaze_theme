@@ -25,6 +25,13 @@ Features:
 - To change colors add before your ActiveAdmin styles (_app/assets/stylesheets/active_admin.scss_):
 
 ```css
+/* blaze colors */
+$color-brand: #2C3E50;
+$color-info: #4dabf5;
+$color-warning: #ff9800;
+$color-success: #4caf50;
+$color-error: #f44336;
+/* main variables */
 $bg-form1: #f4f4f4;
 $bg-form2: darken($bg-form1, 3%);
 $bg-form3: darken($bg-form1, 6%);

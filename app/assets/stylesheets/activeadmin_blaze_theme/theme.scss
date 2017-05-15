@@ -13,7 +13,7 @@ $fg-link2: #eee !default;
 $fg-table-borders: #e4e4e4 !default;
 
 // other variables
-$height-inputs: 25px !default;
+$height-inputs: 28px !default;
 $text-shadow: #000 !default;
 
 // active_admin theme styles
@@ -108,7 +108,7 @@ body.active_admin {
           background-image: none;
         }
         label {
-          line-height: 26px;
+          line-height: $height-inputs;
         }
         > ol > .has_many_container > fieldset.inputs {
           background-color: $bg-form2;
@@ -162,6 +162,12 @@ body.active_admin {
           input[type='text'],
           select {
             width: auto;
+          }
+        }
+        .fragments {
+          margin-left: 10px;
+          .fragments-group {
+            margin-left: 2px;
           }
         }
       }
@@ -304,6 +310,11 @@ body.active_admin {
           }
         }
       }
+    }
+  }
+  .panel_contents table tr:last-child {
+    > td, > th {
+      border-bottom: 0 none;
     }
   }
 
