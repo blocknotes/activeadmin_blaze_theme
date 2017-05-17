@@ -6,6 +6,7 @@ $bg-form1: #f4f4f4 !default;
 $bg-form2: darken($bg-form1, 3%) !default;
 $bg-form3: darken($bg-form1, 6%) !default;
 $bg-form4: darken($bg-form1, 9%) !default;
+$bg-form-sub-headings: #d4d4d4 !default;
 $bg-header: $color-brand !default;
 $bg-inputs: #fff !default;
 $fg-box-title: #fff !default;
@@ -13,6 +14,8 @@ $fg-link2: #eee !default;
 $fg-table-borders: #e4e4e4 !default;
 
 // other variables
+$form-padding: 10px;
+$inputs-spacing: 10px;
 $height-inputs: 28px !default;
 $text-shadow: #000 !default;
 
@@ -93,9 +96,8 @@ body.active_admin {
         display: inline-block;
       }
       &.inputs {
-        @extend .c-card;
-        @extend .u-high;
-        background-color: $bg-form1;
+        background-color: transparent;
+        box-shadow: none;
         padding: 0;
         input[type='number'],
         input[type='text'],
@@ -109,32 +111,6 @@ body.active_admin {
         }
         label {
           line-height: $height-inputs;
-        }
-        > ol > .has_many_container > fieldset.inputs {
-          background-color: $bg-form2;
-          > ol > .has_many_container > fieldset.inputs {
-            background-color: $bg-form3;
-            > ol > .has_many_container > fieldset.inputs {
-              background-color: $bg-form4;
-            }
-          }
-        }
-        > legend {
-          @extend .c-card__item;
-          @extend .c-card__item--brand;
-          color: $fg-box-title;
-          padding: 8px 11px;
-          text-shadow: $text-shadow 0 1px 0;
-          > span {
-            background-color: transparent;
-            background-image: none;
-            border: 0 none;
-            box-shadow: initial;
-            color: inherit;
-            margin: 0;
-            padding: 0;
-            text-shadow: inherit;
-          }
         }
         // .boolean > label {  // not working
         //   @extend .c-field;
@@ -164,20 +140,74 @@ body.active_admin {
             width: auto;
           }
         }
-        .fragments {
-          margin-left: 10px;
-          .fragments-group {
-            margin-left: 2px;
+      }
+      > ol {
+        padding: 0;
+        > li {
+          padding: 0 0 $inputs-spacing 0;
+          &.boolean label {
+            float: none;
+          }
+          &.has_many_container {
+            padding: $form-padding;
+            .has_many_fields {
+              margin: 0;
+            }
           }
         }
       }
-      ol {
-        padding: 1px;
-        > li {
-          padding: 1px;
-          > label {
-            margin-left: 10px;
+    }
+    > fieldset.inputs {
+      > legend {
+        @extend .c-card__item;
+        @extend .c-card__item--brand;
+        border-radius: 5px 5px 0 0;
+        color: $fg-box-title;
+        padding: 8px 11px;
+        text-shadow: $text-shadow 0 1px 0;
+        > span {
+          background-color: transparent;
+          background-image: none;
+          border: 0 none;
+          box-shadow: initial;
+          color: inherit;
+          margin: 0;
+          padding: 0;
+          text-shadow: inherit;
+        }
+      }
+      > ol {
+        @extend .c-card;
+        @extend .u-high;
+        background-color: $bg-form1;
+        border-radius: 0 0 5px 5px;
+        padding: $form-padding;
+        > .has_many_container {
+          background-color: $bg-form2;
+          > fieldset > ol > .has_many_container {
+            background-color: $bg-form3;
+            > fieldset > ol > .has_many_container {
+              background-color: $bg-form4;
+            }
           }
+        }
+      }
+      .has_many_container {
+        @extend .c-card;
+        @extend .u-high;
+        padding: 0;
+        h3 {
+          @extend .c-card__item;
+          // @extend .c-card__item--info;
+          background: $bg-form-sub-headings;
+          margin-bottom: 0;
+        }
+        .inputs {
+          padding: $form-padding;
+        }
+        > .button {
+          margin-left: $form-padding;
+          margin-bottom: $form-padding;
         }
       }
     }
