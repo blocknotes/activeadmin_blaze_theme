@@ -36,11 +36,17 @@ $bg-form1: #f4f4f4;
 $bg-form2: darken($bg-form1, 3%);
 $bg-form3: darken($bg-form1, 6%);
 $bg-form4: darken($bg-form1, 9%);
+$bg-form-sub-headings: #d4d4d4;
 $bg-header: $color-brand;
 $bg-inputs: #fff;
 $fg-box-title: #fff;
 $fg-link2: #eee;
 $fg-table-borders: #e4e4e4;
+/* other variables */
+$form-padding: 10px;
+$inputs-spacing: 10px;
+$height-inputs: 28px;
+$text-shadow: #000;
 ```
 
 ## Screenshots
