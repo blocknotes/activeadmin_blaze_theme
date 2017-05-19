@@ -2,13 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 // main variables
-$bg-form1: #f4f4f4 !default;
-$bg-form2: darken($bg-form1, 3%) !default;
-$bg-form3: darken($bg-form1, 6%) !default;
-$bg-form4: darken($bg-form1, 9%) !default;
-$bg-form-sub-headings: #d4d4d4 !default;
-$bg-header: $color-brand !default;
-$bg-inputs: #fff !default;
+$bg-form1: #f4f4f4 !default;              // bg 1st level forms
+$bg-form2: darken($bg-form1, 3%) !default;  // bg 2nd level forms (nested)
+$bg-form3: darken($bg-form1, 6%) !default;  // bg 3rd level forms (nested)
+$bg-form4: darken($bg-form1, 9%) !default;  // bg 4th level forms (nested)
+$bg-form-sub-headings: #d4d4d4 !default;  // bg nested forms title
+$bg-header: $color-brand !default;          // bg header bar
+$bg-inputs: #fff !default;                // bg forms inputs
+$bg-menu-active: #7b929e !default;        // bg menu item current / hover
 $fg-box-title: #fff !default;
 $fg-link2: #eee !default;
 $fg-table-borders: #e4e4e4 !default;
@@ -210,6 +211,10 @@ body.active_admin {
           margin-bottom: $form-padding;
         }
       }
+      .choices-group li.choice {
+        display: inline-block;
+        margin-right: 10px;
+      }
     }
   }
 
@@ -222,6 +227,27 @@ body.active_admin {
     position: relative;
     .header-item {
       top: 0;
+    }
+    ul.tabs {
+      li:hover, li.current {
+        background: $bg-menu-active;
+      }
+      > li.has_nested {
+        > a {
+          background-color: transparent;
+          border-bottom: 0;
+        }
+        > ul {
+          background: lighten( $bg-header, 5% );
+          margin: 0;
+          a {
+            line-height: 2em;
+          }
+          li:hover {
+            background: $bg-menu-active;
+          }
+        }
+      }
     }
   }
 

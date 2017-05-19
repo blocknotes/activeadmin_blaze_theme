@@ -32,13 +32,14 @@ $color-warning: #ff9800;
 $color-success: #4caf50;
 $color-error: #f44336;
 /* main variables */
-$bg-form1: #f4f4f4;
-$bg-form2: darken($bg-form1, 3%);
-$bg-form3: darken($bg-form1, 6%);
-$bg-form4: darken($bg-form1, 9%);
-$bg-form-sub-headings: #d4d4d4;
-$bg-header: $color-brand;
-$bg-inputs: #fff;
+$bg-form1: #f4f4f4;                // bg 1st level forms
+$bg-form2: darken($bg-form1, 3%);  // bg 2nd level forms (nested)
+$bg-form3: darken($bg-form1, 6%);  // bg 3rd level forms (nested)
+$bg-form4: darken($bg-form1, 9%);  // bg 4th level forms (nested)
+$bg-form-sub-headings: #d4d4d4;    // bg nested forms title
+$bg-header: $color-brand;          // bg header bar
+$bg-inputs: #fff;                  // bg forms inputs
+$bg-menu-active: #7b929e;          // bg menu item current / hover
 $fg-box-title: #fff;
 $fg-link2: #eee;
 $fg-table-borders: #e4e4e4;
