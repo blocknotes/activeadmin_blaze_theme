@@ -11,9 +11,10 @@ $bg-header: $color-brand !default;          // bg header bar
 $bg-inputs: #fff !default;                // bg forms inputs
 $bg-menu-active: #7b929e !default;        // bg menu item current / hover
 $fg-box-title: #fff !default;
+$fg-button-link: #fff !default;
 $fg-menu-items: #f8f8f8 !default;
-$fg-link2: #eee !default;
 $fg-table-borders: #e4e4e4 !default;
+$fg-table-link: #eee !default;
 
 // other variables
 $form-padding: 10px !default;
@@ -269,6 +270,12 @@ body.active_admin {
         margin-right: 10px;
       }
     }
+
+    // misc
+    a.c-button {
+      color: $fg-button-link;
+      text-decoration: none;
+    }
   }
 
   // header
@@ -337,6 +344,12 @@ body.active_admin {
       display: inline-block;
       margin-right: 2px;
       padding: 0;
+    }
+    .prev {
+      margin-right: 16px;
+    }
+    .next {
+      margin-left: 14px;
     }
     .page {
       @extend .c-pagination__page;
@@ -430,7 +443,7 @@ body.active_admin {
       @extend .button-base;
       margin-right: 10px;
       span {
-        color: $fg-link2;
+        color: $fg-table-link;
       }
     }
     a:hover,

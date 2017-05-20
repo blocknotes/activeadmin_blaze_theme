@@ -5,10 +5,10 @@ A theme for Active Admin using [Blaze CSS](http://blazecss.com/)
 Features:
 
 - clean UI
-- customizable
-- compact edit form
-- some custom fields: toggle
-- Blaze CSS widgets available
+- compact nested forms
+- [customizable](#customize)
+- new formtastic inputs: [toggle](#toggle)
+- Blaze CSS [widgets](#blaze-widgets)
 
 ## Install
 
@@ -43,8 +43,10 @@ $bg-header: $color-brand;          // bg header bar
 $bg-inputs: #fff;                  // bg forms inputs
 $bg-menu-active: #7b929e;          // bg menu item current / hover
 $fg-box-title: #fff;
-$fg-link2: #eee;
+$fg-button-link: #fff;
+$fg-menu-items: #f8f8f8;
 $fg-table-borders: #e4e4e4;
+$fg-table-link: #eee;
 /* other variables */
 $form-padding: 10px;
 $inputs-spacing: 10px;
@@ -65,6 +67,30 @@ To change toggle color:
 `f.input :boolean, as: :blaze_toggle, input_html: { toggle_class: 'c-toggle--brand' }`
 
 Available: `c-toggle--brand, c-toggle--info, c-toggle--warning, c-toggle--success, c-toggle--error`
+
+## Blaze widgets
+
+See components avaible in Blaze CSS [docs](http://blazecss.com/components/buttons/).
+
+Badge example:
+
+```ruby
+f.input :price, label: raw( 'Price <span class="c-badge c-badge--warning" style="position: relative; top: -5px">in $</span>' )
+```
+
+Button example:
+
+```ruby
+a 'clear form', href: '#', class: 'c-button c-button--error', onclick: 'event.preventDefault();document.forms[0].reset();'
+```
+
+Progress bar example:
+
+```ruby
+div class: 'c-progress' do
+  div class: 'c-progress__bar c-progress__bar--success', style: "width: #{f.object.a_field}%;"
+end
+```
 
 ## Screenshots
 
