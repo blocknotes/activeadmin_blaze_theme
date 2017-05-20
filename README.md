@@ -98,7 +98,7 @@ Index:
 
 ![index](screenshot1.jpg)
 
-Edit:
+Edit (with `$form-padding: 2px;`):
 
 ![edit](screenshot2.jpg)
 

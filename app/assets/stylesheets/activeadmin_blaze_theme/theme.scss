@@ -212,11 +212,12 @@ body.active_admin {
         }
       }
     }
-    > fieldset.inputs {
+    > fieldset.inputs, .ui-tabs-panel > fieldset.inputs {
       > legend {
         @extend .c-card__item;
         @extend .c-card__item--brand;
         border-radius: 5px 5px 0 0;
+        box-shadow: 0 0 1px rgba(17, 17, 17, 0.6), 0 5px 10px -3px rgba(17, 17, 17, 0.4);
         color: $fg-box-title;
         padding: 8px 11px;
         text-shadow: $text-shadow 0 1px 0;
