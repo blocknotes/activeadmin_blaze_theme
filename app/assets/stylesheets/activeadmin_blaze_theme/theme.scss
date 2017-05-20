@@ -39,6 +39,7 @@ body.active_admin {
     // inputs
     input[type='email'],
     input[type='number'],
+    input[type='password'],
     input[type='search'],
     input[type='tel'],
     input[type='text'],
@@ -107,6 +108,7 @@ body.active_admin {
       .filter_form_field.filter_date_range {
         input[type='email'],
         input[type='number'],
+        input[type='password'],
         input[type='search'],
         input[type='tel'],
         input[type='text'],
@@ -132,6 +134,7 @@ body.active_admin {
         padding: 0;
         input[type='email'],
         input[type='number'],
+        input[type='password'],
         input[type='search'],
         input[type='tel'],
         input[type='text'],
@@ -171,6 +174,7 @@ body.active_admin {
         .fragment {
           input[type='email'],
           input[type='number'],
+          input[type='password'],
           input[type='search'],
           input[type='tel'],
           input[type='text'],
@@ -337,6 +341,7 @@ body.active_admin {
     .filter_form_field {
       input[type='email'],
       input[type='number'],
+      input[type='password'],
       input[type='search'],
       input[type='tel'],
       input[type='text'],
