@@ -37,6 +37,7 @@ body.active_admin {
   // forms
   form {
     // inputs
+    input[type='datetime-local'],
     input[type='email'],
     input[type='number'],
     input[type='password'],
@@ -103,9 +104,17 @@ body.active_admin {
       @extend .c-button--success;
     }
 
+    // custom fields
+    .blaze_toggle {
+      label {
+        display: inline-block;
+      }
+    }
+
     // filter forms
     &.filter_form {
       .filter_form_field.filter_date_range {
+        input[type='datetime-local'],
         input[type='email'],
         input[type='number'],
         input[type='password'],
@@ -132,6 +141,7 @@ body.active_admin {
         background-color: transparent;
         box-shadow: none;
         padding: 0;
+        input[type='datetime-local'],
         input[type='email'],
         input[type='number'],
         input[type='password'],
@@ -172,6 +182,7 @@ body.active_admin {
           }
         }
         .fragment {
+          input[type='datetime-local'],
           input[type='email'],
           input[type='number'],
           input[type='password'],
@@ -188,7 +199,7 @@ body.active_admin {
         padding: 0;
         > li {
           padding: 0 0 $inputs-spacing 0;
-          &.boolean label {
+          &.boolean label, &.blaze_toggle label {
             float: none;
           }
           &.has_many_container {
@@ -301,6 +312,48 @@ body.active_admin {
     }
   }
 
+  // pagination
+  nav.pagination {
+    @extend .c-pagination;
+    span > a {
+      background: transparent;
+      background-image: none;
+      border: 0 none;
+      box-shadow: none;
+      color: initial;
+      cursor: pointer;
+      padding: 6px 10px;
+      margin: 0 auto;
+      text-shadow: none;
+    }
+    a:hover, span:hover > a {
+      background: transparent;
+      background-image: none;
+      color: #fff;
+      text-shadow: none;
+    }
+    .first, .prev, .next, .last {
+      @extend .c-pagination__control;
+      display: inline-block;
+      margin-right: 2px;
+      padding: 0;
+    }
+    .page {
+      @extend .c-pagination__page;
+      display: inline-block;
+      margin-right: 2px;
+      padding: 0;
+      &.current {
+        @extend .c-pagination__page--current;
+        background-image: none;
+        padding: 6px 10px;
+      }
+      &.current:hover {
+        background-image: none;
+      }
+    }
+  }
+
   // navbar / menu
   #tabs, #utility_nav {
     @extend .c-nav;
@@ -339,6 +392,7 @@ body.active_admin {
     @extend .c-card;
     @extend .u-high;
     .filter_form_field {
+      input[type='datetime-local'],
       input[type='email'],
       input[type='number'],
       input[type='password'],

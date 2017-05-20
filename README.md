@@ -5,8 +5,10 @@ A theme for Active Admin using [Blaze CSS](http://blazecss.com/)
 Features:
 
 - clean UI
+- customizable
 - compact edit form
-- Blaze CSS widgets
+- some custom fields: toggle
+- Blaze CSS widgets available
 
 ## Install
 
@@ -49,6 +51,20 @@ $inputs-spacing: 10px;
 $height-inputs: 28px;
 $text-shadow: #000;
 ```
+
+## Custom fields
+
+### Toggle
+
+In *form* \ *inputs* block:
+
+`f.input :boolean, as: :blaze_toggle`
+
+To change toggle color:
+
+`f.input :boolean, as: :blaze_toggle, input_html: { toggle_class: 'c-toggle--brand' }`
+
+Available: `c-toggle--brand, c-toggle--info, c-toggle--warning, c-toggle--success, c-toggle--error`
 
 ## Screenshots
 
