@@ -7,7 +7,7 @@ Features:
 - clean UI
 - compact nested forms
 - [customizable](#customize)
-- new formtastic inputs: [toggle](#toggle)
+- custom boolean input: [toggle](#toggle)
 - Blaze CSS [widgets](#blaze-widgets)
 
 ## Install
