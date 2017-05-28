@@ -6,7 +6,7 @@ Features:
 
 - clean UI
 - compact nested forms
-- [customizable](#customize)
+- [customizable](#customize): colors, sidebar position, compact title bar, scroll on cells
 - custom boolean input: [toggle](#toggle)
 - Blaze CSS [widgets](#blaze-widgets)
 
@@ -52,6 +52,28 @@ $form-padding: 10px;
 $inputs-spacing: 10px;
 $height-inputs: 28px;
 $text-shadow: #000;
+```
+
+- To move sidebar on the left add to your ActiveAdmin styles (after blaze theme import):
+
+```css
+#active_admin_content.with_sidebar {
+  @extend .sidebar_left;
+}
+```
+
+- More options:
+
+```css
+// compact title bar
+#title_bar {
+  @extend .compact_titlebar;
+}
+
+// scrollable table cells
+.index_content table {
+  @extend .scoll_cells;
+}
 ```
 
 ## Custom fields
