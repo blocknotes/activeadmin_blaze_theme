@@ -616,11 +616,12 @@ body.active_admin {
 
   // footer
   #footer {
-    bottom: 0;
-    position: absolute;
+    // bottom: 0;
+    // position: absolute;
     text-align: center;
     width: 100%;
     > p {
+      margin: 0;
       padding: 0;
     }
   }
@@ -695,5 +696,9 @@ body.active_admin {
       max-width: 200px;
       overflow: scroll;
     }
+  }
+
+  #active_admin_content.without_sidebar #main_content_wrapper #main_content {
+    padding: 20px 15px;
   }
 }
