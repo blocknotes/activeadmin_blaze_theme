@@ -19,7 +19,7 @@ $fg-table-link: #eee !default;
 // other variables
 $form-padding: 10px !default;
 $inputs-spacing: 10px !default;
-$height-inputs: 28px !default;
+$height-inputs: 26px !default;
 $text-shadow: #000 !default;
 
 // active_admin theme styles
@@ -33,41 +33,6 @@ body.active_admin {
     background-image: none;
     box-shadow: initial;
     text-shadow: $text-shadow 0 1px 0;
-  }
-  .compact_titlebar {
-    padding-top: 0;
-    padding-bottom: 0;
-    .breadcrumb {
-      float: left;
-      font-size: 1em;
-      line-height: initial;
-      margin: 0;
-      padding: 0;
-    }
-    #page_title {
-      font-size: 2em;
-    }
-    #titlebar_left, #titlebar_right {
-      height: 36px;
-    }
-  }
-  .sidebar_left {
-    #main_content_wrapper {
-      float: right;
-      width: calc( 100% - 300px );
-      #main_content {
-        margin-right: 0;
-      }
-    }
-    #sidebar {
-      margin-left: 0;
-    }
-  }
-  table.scoll_cells {
-    th, td {
-      max-width: 200px;
-      overflow: scroll;
-    }
   }
 
   // forms
@@ -87,6 +52,7 @@ body.active_admin {
       background-color: $bg-inputs;
       display: inline-block;
       height: $height-inputs;
+      padding: 1px 6px;
     }
     input[type='radio'] {
       margin-right: 0.4em;
@@ -99,8 +65,14 @@ body.active_admin {
       min-width: 200px;
       width: 30%;
     }
+    select {
+      padding: 1px 2px;
+    }
     select[multiple], textarea {
       height: auto;
+    }
+    textarea {
+      padding: 6px;
     }
     .selectize-input {
       line-height: $height-inputs;
@@ -149,6 +121,17 @@ body.active_admin {
 
     // filter forms
     &.filter_form {
+      .filter_form_field {
+        > input, > select, .separator, .seperator {
+          float: left;
+        }
+        > label {
+          padding-top: 8px;
+        }
+        .separator, .seperator {
+          line-height: $height-inputs;
+        }
+      }
       .filter_form_field.filter_date_range {
         input[type='datetime-local'],
         input[type='email'],
@@ -164,6 +147,10 @@ body.active_admin {
       }
       .filter_form_field.select_and_search select {
         background-color: $bg-inputs;
+      }
+      .buttons {
+        clear: both;
+        padding-top: 14px;
       }
     }
 
@@ -449,6 +436,13 @@ body.active_admin {
   }
 
   // sidebars
+  #sidebar {
+    background: #efefef;
+    padding: 0 15px;
+    .sidebar_section {
+      margin-bottom: 20px;
+    }
+  }
   .sidebar_section {
     @extend .c-card;
     @extend .u-high;
@@ -477,6 +471,7 @@ body.active_admin {
       background-image: none;
       border: 0 none !important;
       color: $fg-box-title;
+      margin-bottom: 0;
       padding: 8px 11px;
       text-shadow: $text-shadow 0 1px 0;
     }
@@ -564,6 +559,7 @@ body.active_admin {
   // title bar
   #title_bar {
     background-image: none;
+    box-shadow: none;
     .action_items span.action_item {
       > a,
       > .dropdown_menu > a {
@@ -582,6 +578,7 @@ body.active_admin {
 
   // main content
   #main_content {
+    padding: 30px 0 15px 20px;
     > .panel {
       @extend .c-card;
       @extend .u-high;
@@ -603,6 +600,11 @@ body.active_admin {
     }
   }
 
+  // admin content
+  #active_admin_content {
+    padding: 0;
+  }
+
   // dialogs
   .ui-dialog > .ui-dialog-buttonpane button.ui-button {
     @extend .button-base;
@@ -614,8 +616,13 @@ body.active_admin {
 
   // footer
   #footer {
-    padding: 10px 0 0 0;
+    bottom: 0;
+    position: absolute;
     text-align: center;
+    width: 100%;
+    > p {
+      padding: 0;
+    }
   }
 
   // misc
@@ -642,5 +649,51 @@ body.active_admin {
   // textarea comments
   #active_admin_comment_body {
     width: 100%;
+  }
+
+  // optional customizations
+  .compact_titlebar {
+    padding-top: 0;
+    padding-bottom: 0;
+    .breadcrumb {
+      float: left;
+      font-size: 1em;
+      line-height: initial;
+      margin: 0;
+      padding: 0;
+      > a, > a:link, > a:visited, > a:active {
+        opacity: 0.5;
+      }
+    }
+    #page_title {
+      display: inline-block;
+      float: left;
+      font-size: 1em;
+      // font-size: 2em;
+      line-height: initial;
+      margin-left: 5px;
+    }
+    #titlebar_left, #titlebar_right {
+      height: 36px;
+    }
+  }
+  .sidebar_left {
+    #main_content_wrapper {
+      float: right;
+      width: calc( 100% - 300px );
+      #main_content {
+        margin-right: 0;
+        padding: 35px 30px 35px 0;
+      }
+    }
+    #sidebar {
+      margin-left: 0;
+    }
+  }
+  table.scoll_cells {
+    th, td {
+      max-width: 200px;
+      overflow: scroll;
+    }
   }
 }
