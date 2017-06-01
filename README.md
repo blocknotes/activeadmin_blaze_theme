@@ -4,7 +4,7 @@ A theme for Active Admin using [Blaze CSS](http://blazecss.com/)
 
 Features:
 
-- clean UI
+- CSS only theme with clean UI
 - compact nested forms
 - [customizable](#customize): colors, sidebar position, compact title bar, scroll on cells
 - custom boolean input: [toggle](#toggle)

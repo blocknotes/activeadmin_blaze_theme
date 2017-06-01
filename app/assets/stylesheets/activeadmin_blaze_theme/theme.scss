@@ -6,7 +6,7 @@ $bg-form1: #f4f4f4 !default;              // bg 1st level forms
 $bg-form2: darken($bg-form1, 3%) !default;  // bg 2nd level forms (nested)
 $bg-form3: darken($bg-form1, 6%) !default;  // bg 3rd level forms (nested)
 $bg-form4: darken($bg-form1, 9%) !default;  // bg 4th level forms (nested)
-$bg-form-sub-headings: #d4d4d4 !default;  // bg nested forms title
+$bg-form-sub-headings: lighten( $color-brand, 64% ) !default;  // bg nested forms title
 $bg-header: $color-brand !default;          // bg header bar
 $bg-inputs: #fff !default;                // bg forms inputs
 $bg-menu-active: #7b929e !default;        // bg menu item current / hover
@@ -273,12 +273,16 @@ body.active_admin {
       .has_many_container {
         @extend .c-card;
         @extend .u-high;
+        border-left: 2px solid lighten( $color-brand, 20% );
+        border-radius: 0;
+        box-shadow: none;
         padding: 0;
         h3 {
           @extend .c-card__item;
           // @extend .c-card__item--info;
           background: $bg-form-sub-headings;
           margin-bottom: 0;
+          padding-left: 10px;
         }
         .inputs {
           padding: $form-padding;
