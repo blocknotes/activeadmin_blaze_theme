@@ -119,9 +119,13 @@ Index:
 
 ![index](screenshot1.jpg)
 
-Edit (with `$form-padding: 2px;`):
+Edit:
 
 ![edit](screenshot2.jpg)
+
+Show - sidebar on the left:
+
+![edit](screenshot3.jpg)
 
 ## Contributors
 
