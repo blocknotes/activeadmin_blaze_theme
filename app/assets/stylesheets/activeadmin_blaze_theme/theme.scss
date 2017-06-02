@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 // main variables
+$bg-footer: #dfdfdf !default;             // bg footer bar
 $bg-form1: #f4f4f4 !default;              // bg 1st level forms
 $bg-form2: darken($bg-form1, 3%) !default;  // bg 2nd level forms (nested)
 $bg-form3: darken($bg-form1, 6%) !default;  // bg 3rd level forms (nested)
@@ -10,6 +11,7 @@ $bg-form-sub-headings: lighten( $color-brand, 64% ) !default;  // bg nested form
 $bg-header: $color-brand !default;          // bg header bar
 $bg-inputs: #fff !default;                // bg forms inputs
 $bg-menu-active: #7b929e !default;        // bg menu item current / hover
+$bg-sidebar: #efefef;                     // bg sidebar
 $fg-box-title: #fff !default;
 $fg-button-link: #fff !default;
 $fg-menu-items: #f8f8f8 !default;
@@ -20,11 +22,15 @@ $fg-table-link: #eee !default;
 $form-padding: 10px !default;
 $inputs-spacing: 10px !default;
 $height-inputs: 26px !default;
+$height-topbar: 40px !default;
+$height-titlebar: 38px !default;
 $text-shadow: #000 !default;
 
 // active_admin theme styles
 body.active_admin {
   font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  min-height: 100vh;
 
   // generics
   .button-base {
@@ -105,6 +111,9 @@ body.active_admin {
     fieldset.buttons li.cancel a:hover,
     fieldset.actions li.cancel a:hover {
       background-image: none;
+    }
+    > .actions {
+      margin: 5px 0 0 0;
     }
 
     // submits
@@ -281,8 +290,7 @@ body.active_admin {
           @extend .c-card__item;
           // @extend .c-card__item--info;
           background: $bg-form-sub-headings;
-          margin-bottom: 0;
-          padding-left: 10px;
+          padding: 10px;
         }
         .inputs {
           padding: $form-padding;
@@ -323,16 +331,24 @@ body.active_admin {
     }
     .site_title {
       color: $fg-menu-items;
+      padding-top: 0;
+      padding-bottom: 0;
       img {
-        max-height: 36px;
+        max-height: $height-topbar;
         max-width: 250px;
-        top: -1px;
+        // top: -1px;
         vertical-align: middle;
       }
     }
     ul.tabs {
+      li {
+        height: $height-topbar;
+        line-height: $height-topbar;
+      }
       li > a {
         color: $fg-menu-items;
+        height: $height-topbar;
+        line-height: $height-topbar;
       }
       li:hover, li.current {
         background: $bg-menu-active;
@@ -403,6 +419,14 @@ body.active_admin {
       &.current:hover {
         background-image: none;
       }
+      &.gap {
+        border: 0 none;
+      }
+      &.gap:hover {
+        background-color: transparent;
+        color: initial;
+        cursor: default;
+      }
     }
   }
 
@@ -441,11 +465,15 @@ body.active_admin {
 
   // sidebars
   #sidebar {
-    background: #efefef;
+    background: $bg-sidebar;
+    min-height: calc(100vh - #{$height-topbar + $height-titlebar + 2 + 40});
     padding: 0 15px;
     .sidebar_section {
       margin-bottom: 20px;
     }
+  }
+  #active_admin_content > #sidebar, #active_admin_content > #main_content_wrapper {
+    float: none;
   }
   .sidebar_section {
     @extend .c-card;
@@ -564,6 +592,18 @@ body.active_admin {
   #title_bar {
     background-image: none;
     box-shadow: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    .breadcrumb {
+      float: left;
+      font-size: 1em;
+      line-height: initial;
+      margin: 0;
+      padding: 0;
+      > a, > a:link, > a:visited, > a:active {
+        opacity: 0.7;
+      }
+    }
     .action_items span.action_item {
       > a,
       > .dropdown_menu > a {
@@ -578,11 +618,24 @@ body.active_admin {
         @extend .c-button--error;
       }
     }
+    #page_title {
+      display: inline-block;
+      float: left;
+      font-size: 1em;
+      // font-size: 2em;
+      line-height: initial;
+      margin-left: 5px;
+    }
+    #titlebar_left, #titlebar_right {
+      height: $height-titlebar;
+    }
   }
 
   // main content
   #main_content {
-    padding: 30px 0 15px 20px;
+    margin: 0;
+    padding: 25px 20px;
+    width: calc(100% - 270px);
     > .panel {
       @extend .c-card;
       @extend .u-high;
@@ -606,6 +659,7 @@ body.active_admin {
 
   // admin content
   #active_admin_content {
+    display: flex;
     padding: 0;
   }
 
@@ -620,8 +674,11 @@ body.active_admin {
 
   // footer
   #footer {
-    // bottom: 0;
-    // position: absolute;
+    bottom: 0;
+    position: absolute;
+    background-color: $bg-footer;
+    line-height: 20px;
+    padding: 10px;
     text-align: center;
     width: 100%;
     > p {
@@ -631,6 +688,11 @@ body.active_admin {
   }
 
   // misc
+  .download_links > a {
+    @extend .c-button;
+    @extend .c-button--info;
+    @extend .u-small;
+  }
   .ui-datepicker {
     > .ui-datepicker-header {
       border-bottom: 0 none;
@@ -658,40 +720,18 @@ body.active_admin {
 
   // optional customizations
   .compact_titlebar {
-    padding-top: 0;
-    padding-bottom: 0;
-    .breadcrumb {
-      float: left;
-      font-size: 1em;
-      line-height: initial;
-      margin: 0;
-      padding: 0;
-      > a, > a:link, > a:visited, > a:active {
-        opacity: 0.5;
-      }
-    }
-    #page_title {
-      display: inline-block;
-      float: left;
-      font-size: 1em;
-      // font-size: 2em;
-      line-height: initial;
-      margin-left: 5px;
-    }
-    #titlebar_left, #titlebar_right {
-      height: 36px;
-    }
+    white-space: initial;
   }
   .sidebar_left {
     #main_content_wrapper {
-      float: right;
-      width: calc( 100% - 300px );
+      order: 2;
+      width: calc( 100% - 270px );
       #main_content {
-        margin-right: 0;
-        padding: 35px 30px 35px 0;
+        width: 100%;
       }
     }
     #sidebar {
+      order: 1;
       margin-left: 0;
     }
   }
@@ -703,6 +743,11 @@ body.active_admin {
   }
 
   #active_admin_content.without_sidebar #main_content_wrapper #main_content {
-    padding: 20px 15px;
+    width: 100%;
+  }
+  #wrapper {
+    min-height: 100vh;
+    padding-bottom: 40px;  // footer height
+    position: relative;
   }
 }
