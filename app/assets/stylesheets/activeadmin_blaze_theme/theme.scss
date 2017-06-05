@@ -662,6 +662,9 @@ body.active_admin {
     display: flex;
     padding: 0;
   }
+  &.logged_out #active_admin_content {  // devise forms
+    display: block;
+  }
 
   // dialogs
   .ui-dialog > .ui-dialog-buttonpane button.ui-button {
