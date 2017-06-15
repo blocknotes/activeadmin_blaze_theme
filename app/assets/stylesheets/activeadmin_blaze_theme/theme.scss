@@ -753,4 +753,10 @@ body.active_admin {
     padding-bottom: 40px;  // footer height
     position: relative;
   }
+
+  // ckeditor
+  .cke {
+    display: inline-block;
+    width: calc(80% - 22px);
+  }
 }
