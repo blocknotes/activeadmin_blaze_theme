@@ -70,8 +70,15 @@ $text-shadow: #000 !default;
 
 ```css
 // scrollable table cells
-.index_content table {
-  @extend .scoll_cells;
+body.active_admin .index_content table {
+  @extend .scrollable_cells;
+}
+```
+
+```css
+// fix ckeditor width
+body.active_admin .cke {
+  @extend .ckeditor_width_fix
 }
 ```
 

@@ -547,41 +547,9 @@ body.active_admin {
       text-align: center;
     }
   }
-  // .index_table {
-  //   @extend .c-table;
-  //   // @extend .c-table--striped;
-  //   // @extend .c-table--condensed;
-  //   > thead {
-  //     @extend .c-table__head;
-  //     > tr {
-  //       @extend .c-table__row;
-  //       @extend .c-table__row--heading;
-  //       > th {
-  //         @extend .c-table__cell;
-  //         margin-bottom: 0;
-  //         &.col-selectable > div {
-  //           margin-left: auto;
-  //           margin-right: auto;
-  //         }
-  //       }
-  //     }
-  //   }
-  //   > tbody {
-  //     @extend .c-table__body;
-  //     border-left: 1px solid $fg-table-borders;
-  //     border-right: 1px solid $fg-table-borders;
-  //     > tr {
-  //       @extend .c-table__row;
-  //       > td {
-  //         @extend .c-table__cell;
-  //         &.col-selectable > div {
-  //           margin-left: auto;
-  //           margin-right: auto;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+  .index_as_table {
+    overflow-x: scroll;
+  }
   .panel_contents table tr:last-child {
     > td, > th {
       border-bottom: 0 none;
@@ -721,6 +689,30 @@ body.active_admin {
     width: 100%;
   }
 
+  // boolean values
+  .status_tag {
+    min-width: 30px;
+    display: inline-block;
+    text-align: center;
+    &.no {
+      background-color: $color-error;
+    }
+    &.yes {
+      background-color: $color-success;
+    }
+  }
+
+  // misc
+  #active_admin_content.without_sidebar #main_content_wrapper #main_content {
+    width: 100%;
+  }
+  #wrapper {
+    display: block;
+    min-height: 100vh;
+    padding-bottom: 40px;  // footer height
+    position: relative;
+  }
+
   // optional customizations
   .compact_titlebar {
     white-space: initial;
@@ -738,19 +730,14 @@ body.active_admin {
       margin-left: 0;
     }
   }
-  table.scoll_cells {
+  table.scrollable_cells {
     th, td {
       max-width: 200px;
       overflow: scroll;
     }
   }
-
-  #active_admin_content.without_sidebar #main_content_wrapper #main_content {
-    width: 100%;
-  }
-  #wrapper {
-    min-height: 100vh;
-    padding-bottom: 40px;  // footer height
-    position: relative;
+  .ckeditor_width_fix {
+    display: inline-block;
+    width: calc(80% - 22px);
   }
 }
