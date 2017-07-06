@@ -236,9 +236,6 @@ body.active_admin {
           }
           &.has_many_container {
             padding: $form-padding;
-            .has_many_fields {
-              margin: 0;
-            }
           }
         }
       }
@@ -271,30 +268,55 @@ body.active_admin {
         padding: $form-padding;
         > .has_many_container {
           background-color: $bg-form2;
-          > fieldset > ol > .has_many_container {
-            background-color: $bg-form3;
-            > fieldset > ol > .has_many_container {
-              background-color: $bg-form4;
-            }
+          ol {
+            background-color: $bg-form2;
+            // padding: 0;
           }
+
+          // > .has_many_fields > ol {
+          //   background-color: $bg-form3;
+          //   > .has_many_container {
+          //     background-color: $bg-form3;
+          //   }
+          // }
+
+          //   > fieldset > ol > .has_many_container {
+          //     background-color: $bg-form3;
+          //     > fieldset > ol > .has_many_container {
+          //       background-color: $bg-form4;
+          //     }
+          //   }
         }
       }
       .has_many_container {
         @extend .c-card;
         @extend .u-high;
-        border-left: 2px solid lighten( $color-brand, 20% );
+        // border-left: 2px solid lighten( $color-brand, 20% );
         border-radius: 0;
         box-shadow: none;
         padding: 0;
-        h3 {
+        > h3 {
           @extend .c-card__item;
           // @extend .c-card__item--info;
           background: $bg-form-sub-headings;
+          margin: 0;
           padding: 10px;
         }
-        .inputs {
-          padding: $form-padding;
+        // ol {
+        //   border-left: 2px solid lighten( $color-brand, 20% );
+        //   padding: 10px 0 10px 10px;
+        // }
+        .input {
+          padding: 10px 0 0 10px;
         }
+        .inputs {
+          margin: 0;
+          // padding: $form-padding;
+        }
+        // .has_many_fields {
+        //   margin: 0;
+        //   padding: 0;
+        // }
         > .button {
           margin-left: $form-padding;
           margin-bottom: $form-padding;
