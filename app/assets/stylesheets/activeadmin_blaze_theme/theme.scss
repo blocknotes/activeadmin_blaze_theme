@@ -186,9 +186,9 @@ body.active_admin {
           background-color: $bg-inputs;
           width: calc(80% - 22px);
         }
-        select {
-          background-image: none;
-        }
+        // select {
+        //   background-image: none;
+        // }
         label {
           line-height: $height-inputs;
         }
@@ -265,6 +265,7 @@ body.active_admin {
         @extend .u-high;
         background-color: $bg-form1;
         border-radius: 0 0 5px 5px;
+        overflow: visible;
         padding: $form-padding;
         > .has_many_container {
           background-color: $bg-form2;
