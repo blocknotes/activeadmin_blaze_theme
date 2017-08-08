@@ -72,7 +72,7 @@ body.active_admin {
       width: 30%;
     }
     select {
-      padding: 1px 2px;
+      padding: 1px 5px;
     }
     select[multiple], textarea {
       height: auto;
@@ -184,7 +184,9 @@ body.active_admin {
         select,
         textarea {
           background-color: $bg-inputs;
-          width: calc(80% - 22px);
+          min-width: 240px;
+          width: auto;
+          // width: calc(80% - 22px);
         }
         // select {
         //   background-image: none;
@@ -300,7 +302,8 @@ body.active_admin {
           @extend .c-card__item;
           // @extend .c-card__item--info;
           background: $bg-form-sub-headings;
-          margin: 0;
+          margin-bottom: 2px;
+          margin-top: 0;
           padding: 10px;
         }
         // ol {
@@ -510,10 +513,12 @@ body.active_admin {
       input[type='tel'],
       input[type='text'],
       input[type='url'],
-      select,
       textarea {
         background-color: $bg-inputs;
         background-image: none;
+      }
+      select {
+        background-color: $bg-inputs;
       }
     }
     .panel_contents {
@@ -526,7 +531,8 @@ body.active_admin {
       background-image: none;
       border: 0 none !important;
       color: $fg-box-title;
-      margin-bottom: 0;
+      margin-bottom: 2px;
+      margin-top: 0;
       padding: 8px 11px;
       text-shadow: $text-shadow 0 1px 0;
     }
@@ -636,6 +642,7 @@ body.active_admin {
         background-image: none;
         border: 0 none !important;
         color: $fg-box-title;
+        margin: 0;
         padding: 8px 11px;
         text-shadow: $text-shadow 0 1px 0;
       }
@@ -761,6 +768,8 @@ body.active_admin {
   }
   .ckeditor_width_fix {
     display: inline-block;
-    width: calc(80% - 22px);
+    min-width: 240px;
+    width: auto;
+    // width: calc(80% - 22px);
   }
 }
