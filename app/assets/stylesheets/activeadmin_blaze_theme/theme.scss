@@ -40,6 +40,9 @@ body.active_admin {
     box-shadow: initial;
     text-shadow: $text-shadow 0 1px 0;
   }
+  .c-input-group .c-button:not(:first-child) {
+    border-left: 1px solid #ddd;
+  }
 
   // forms
   form {
@@ -76,6 +79,10 @@ body.active_admin {
     }
     select[multiple], textarea {
       height: auto;
+    }
+    select.c-field:not([multiple]), select:not([multiple]) {
+      background: transparent;
+      -webkit-appearance: menulist;
     }
     textarea {
       padding: 6px;
@@ -184,7 +191,7 @@ body.active_admin {
         select,
         textarea {
           background-color: $bg-inputs;
-          min-width: 240px;
+          min-width: 450px;
           width: auto;
           // width: calc(80% - 22px);
         }
@@ -194,27 +201,31 @@ body.active_admin {
         label {
           line-height: $height-inputs;
         }
+        li.input.hidden {
+          padding: 0;
+        }
         // .boolean > label {  // not working
         //   @extend .c-field;
         //   @extend .c-field--choice;
         // }
         .button {
           @extend .button-base;
+          display: inline-block;
+          margin-left: 10px;
+          margin-top: 10px;
+          &:hover {
+            background-image: none;
+          }
           &.has_many_add {
             @extend .c-button--info;
-            display: inline-block;
-            &:hover {
-              background-image: none;
-            }
           }
           &.has_many_remove {
             @extend .c-button--error;
-            display: inline-block;
-            &:hover {
-              background-image: none;
-            }
           }
         }
+        // .datepicker > input {
+        //   -webkit-appearance: menulist;
+        // }
         .fragment {
           input[type='datetime-local'],
           input[type='email'],
@@ -225,6 +236,7 @@ body.active_admin {
           input[type='text'],
           input[type='url'],
           select {
+            min-width: auto;
             width: auto;
           }
         }
@@ -501,6 +513,10 @@ body.active_admin {
   #active_admin_content > #sidebar, #active_admin_content > #main_content_wrapper {
     float: none;
   }
+  .panel_contents {
+    @extend .c-card__item;
+    padding: 8px 10px 10px 10px;
+  }
   .sidebar_section {
     @extend .c-card;
     @extend .u-high;
@@ -521,10 +537,6 @@ body.active_admin {
         background-color: $bg-inputs;
       }
     }
-    .panel_contents {
-      @extend .c-card__item;
-      padding: 5px 10px 10px 10px;
-    }
     > h3 {
       @extend .c-card__item;
       @extend .c-card__item--brand;
@@ -536,8 +548,14 @@ body.active_admin {
       padding: 8px 11px;
       text-shadow: $text-shadow 0 1px 0;
     }
+    h4 {
+      margin: 0;
+    }
     input[type='submit'] {
       @extend .c-button--info;
+    }
+    ul {
+      margin: 0 0 8px 0;
     }
   }
 
@@ -633,7 +651,7 @@ body.active_admin {
     margin: 0;
     padding: 25px 20px;
     width: calc(100% - 270px);
-    > .panel {
+    .panel {
       @extend .c-card;
       @extend .u-high;
       > h3 {
@@ -768,7 +786,7 @@ body.active_admin {
   }
   .ckeditor_width_fix {
     display: inline-block;
-    min-width: 240px;
+    min-width: 450px;
     width: auto;
     // width: calc(80% - 22px);
   }
