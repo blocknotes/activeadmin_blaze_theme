@@ -96,6 +96,10 @@ To change toggle color:
 
 Available: `c-toggle--brand, c-toggle--info, c-toggle--warning, c-toggle--success, c-toggle--error`
 
+Standard checkbox with label on the left:
+
+`f.input :boolean, as: :blaze_toggle, input_html: { simple_checkbox: true }`
+
 ## Blaze widgets
 
 See components avaible in Blaze CSS [docs](http://blazecss.com/components/buttons/).
@@ -134,10 +138,14 @@ Show - sidebar on the left:
 
 ![edit](screenshot3.jpg)
 
+## Do you like it? Star it!
+
+If you use this component just star it. A developer is more motivated to improve a project when there is some interest.
+
 ## Contributors
 
 - [Mattia Roccoberton](http://blocknot.es) - creator, maintainer
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE.txt)

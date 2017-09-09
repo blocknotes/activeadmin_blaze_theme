@@ -133,6 +133,12 @@ body.active_admin {
       label {
         display: inline-block;
       }
+      .field_with_errors {
+        display: inline;
+      }
+      .inline-errors {
+        margin-top: 0;
+      }
     }
 
     // filter forms
@@ -683,12 +689,23 @@ body.active_admin {
   }
 
   // dialogs
-  .ui-dialog > .ui-dialog-buttonpane button.ui-button {
-    @extend .button-base;
-    margin-right: 10px;
-    &:hover {
-      background-image: none;
+  .ui-dialog {
+    button.ui-button {
+      @extend .button-base;
+      // margin-right: 10px;
+      &:hover {
+        background-image: none;
+      }
     }
+    .ui-dialog-titlebar {
+      display: flex;
+      justify-content: space-between;
+      > * {
+        align-self: center
+      }
+    }
+    // .ui-dialog-buttonset
+    //   text-align: right
   }
 
   // footer

@@ -22,7 +22,8 @@ module Formtastic
 
       def toggle_label
         builder.label(
-          method
+          method,
+          label_text
         )
       end
 
@@ -35,11 +36,12 @@ module Formtastic
       end
 
       def label_html_options
-        super.merge( for: input_html_options[:id], class: ['c-toggle', input_html_options[:toggle_class] ] - ['label'] )
+        classes = input_html_options[:simple_checkbox] ? [] : [ 'c-toggle', input_html_options[:toggle_class] ]
+        super.merge( for: input_html_options[:id], class: classes - ['label'] )
       end
 
       def label_with_embedded_checkbox
-        check_box_html << "" << toggle_html # << label_text
+        check_box_html << "" << ( input_html_options[:simple_checkbox] ? '' : toggle_html )  # << label_text
       end
 
       def toggle_html
