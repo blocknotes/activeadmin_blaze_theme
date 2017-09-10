@@ -82,7 +82,7 @@ body.active_admin .cke {
 }
 ```
 
-## Custom fields
+## Custom fields / components
 
 ### Toggle
 
@@ -99,6 +99,26 @@ Available: `c-toggle--brand, c-toggle--info, c-toggle--warning, c-toggle--succes
 Standard checkbox with label on the left:
 
 `f.input :boolean, as: :blaze_toggle, input_html: { simple_checkbox: true }`
+
+### Sidebar menu
+
+A sidebar menu (*priority* option permit to put the sidebar above the filters):
+
+```rb
+  sidebar :help, priority: 0 do
+    ul class: 'blaze-menu' do
+      li do
+        link_to 'Menu item 1', admin_root_path
+      end
+      li do
+        link_to 'Menu item 2', admin_root_path
+      end
+      li do
+        link_to 'Menu item 3', admin_root_path
+      end
+    end
+  end
+```
 
 ## Blaze widgets
 

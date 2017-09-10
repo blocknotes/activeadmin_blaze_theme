@@ -19,6 +19,7 @@ $fg-table-borders: #e4e4e4 !default;
 $fg-table-link: #eee !default;
 
 // other variables
+$color-validation-error: #932419 !default;
 $form-padding: 10px !default;
 $inputs-spacing: 10px !default;
 $height-inputs: 26px !default;
@@ -246,6 +247,9 @@ body.active_admin {
             width: auto;
           }
         }
+        .input.error select {
+          border: 1px solid $color-validation-error;
+        }
       }
       > ol {
         padding: 0;
@@ -332,7 +336,10 @@ body.active_admin {
           padding: 10px 0 0 10px;
         }
         .inputs {
+          border-bottom: 1px solid #ccc;
+          border-radius: 0;
           margin: 0;
+          padding: 0 0 5px 0;
           // padding: $form-padding;
         }
         // .has_many_fields {
@@ -776,6 +783,22 @@ body.active_admin {
     min-height: 100vh;
     padding-bottom: 40px;  // footer height
     position: relative;
+  }
+
+  .blaze-menu {
+    @extend .c-card;
+    @extend .c-card--menu;
+    @extend .u-high;
+    li {
+      @extend .c-card__item;
+      a {
+        display: block;
+        text-decoration: none;
+      }
+    }
+  }
+  .sidebar_section .blaze-menu {
+    margin-bottom: 4px;
   }
 
   // optional customizations
