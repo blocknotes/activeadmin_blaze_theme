@@ -120,7 +120,7 @@ A sidebar menu (*priority* option permit to put the sidebar above the filters):
   end
 ```
 
-![menu](screenshot4.jpg)
+![menu](extra/screenshot4.jpg)
 
 ### Readonly field
 
@@ -160,15 +160,15 @@ end
 
 Index:
 
-![index](screenshot1.jpg)
+![index](extra/screenshot1.jpg)
 
 Edit:
 
-![edit](screenshot2.jpg)
+![edit](extra/screenshot2.jpg)
 
 Show - sidebar on the left:
 
-![edit](screenshot3.jpg)
+![edit](extra/screenshot3.jpg)
 
 ## Do you like it? Star it!
 
