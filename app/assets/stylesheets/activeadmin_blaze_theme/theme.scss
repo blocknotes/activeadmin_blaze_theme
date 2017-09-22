@@ -55,6 +55,7 @@ body.active_admin {
     input[type='search'],
     input[type='tel'],
     input[type='text'],
+    input[type='time'],
     input[type='url'],
     select,
     textarea {
@@ -141,6 +142,24 @@ body.active_admin {
         margin-top: 0;
       }
     }
+    .readonly-field {
+      div {
+        display: inline-block;
+        line-height: $height-inputs;
+        min-width: 450px;
+      }
+      .field_label {
+        display: block;
+        float: left;
+        width: 20%;
+      }
+      .field_value {
+        border-bottom: 1px dashed #ccc;
+        display: inline-block;
+        width: 100%;
+        padding: 0 6px;
+      }
+    }
 
     // filter forms
     &.filter_form {
@@ -163,6 +182,7 @@ body.active_admin {
         input[type='search'],
         input[type='tel'],
         input[type='text'],
+        input[type='time'],
         input[type='url'], {
           max-width: 100px;
           width: auto;
@@ -194,6 +214,7 @@ body.active_admin {
         input[type='search'],
         input[type='tel'],
         input[type='text'],
+        input[type='time'],
         input[type='url'],
         select,
         textarea {
@@ -241,6 +262,7 @@ body.active_admin {
           input[type='search'],
           input[type='tel'],
           input[type='text'],
+          input[type='time'],
           input[type='url'],
           select {
             min-width: auto;
@@ -362,6 +384,28 @@ body.active_admin {
       padding-bottom: 0;
       padding-top: 25px;
     }
+    .ui-tabs-nav {
+      li {
+        a {
+          background: #eee;
+          color: #555;
+        }
+        &:first-child a {
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
+        }
+        &:last-child a {
+          border-top-right-radius: 6px;
+          border-bottom-right-radius: 6px;
+        }
+        &.ui-tabs-active a {
+          color: #222;
+          border-color: #AAA;
+          background-image: none;
+          background-color: #fff;
+        }
+      }
+    }
 
     // misc
     a.c-button {
@@ -392,6 +436,10 @@ body.active_admin {
       }
     }
     ul.tabs {
+      >li {
+        margin-left: 1px;
+        padding: 0;
+      }
       li {
         height: $height-topbar;
         line-height: $height-topbar;
@@ -400,6 +448,8 @@ body.active_admin {
         color: $fg-menu-items;
         height: $height-topbar;
         line-height: $height-topbar;
+        padding-left: 20px;
+        padding-right: 20px;
       }
       li:hover, li.current {
         background: $bg-menu-active;
@@ -541,6 +591,7 @@ body.active_admin {
       input[type='search'],
       input[type='tel'],
       input[type='text'],
+      input[type='time'],
       input[type='url'],
       textarea {
         background-color: $bg-inputs;
@@ -791,8 +842,10 @@ body.active_admin {
     @extend .u-high;
     li {
       @extend .c-card__item;
+      padding: 0;
       a {
         display: block;
+        padding: 0.5em;
         text-decoration: none;
       }
     }

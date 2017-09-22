@@ -7,7 +7,7 @@ Features:
 - CSS only theme with clean UI
 - compact nested forms
 - [customizable](#customize): colors, sidebar position, scroll on cells
-- custom boolean input: [toggle](#toggle)
+- custom controls / components: [toggle](#toggle), [Sidebar menu](#sidebar-menu), [Readonly field](#readonly-field)
 - Blaze CSS [widgets](#blaze-widgets)
 
 ## Install
@@ -119,6 +119,18 @@ A sidebar menu (*priority* option permit to put the sidebar above the filters):
     end
   end
 ```
+
+![menu](screenshot4.jpg)
+
+### Readonly field
+
+Some readonly fields in form:
+
+`f.readonly 'Code', 'Automatically set after save'`
+
+`f.readonly :position, f.object.position`
+
+`f.readonly nil, 'Value only, no label'`
 
 ## Blaze widgets
 

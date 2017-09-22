@@ -1,5 +1,5 @@
+require 'activeadmin/views/activeadmin_form'
 require 'activeadmin_blaze_theme/version'
-
 # require 'formtastic/inputs/blaze_array_input'
 require 'formtastic/inputs/blaze_toggle_input'
 
