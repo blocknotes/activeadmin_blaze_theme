@@ -174,22 +174,27 @@ body.active_admin {
           line-height: $height-inputs;
         }
       }
-      .filter_form_field.filter_date_range {
-        input[type='datetime-local'],
-        input[type='email'],
-        input[type='number'],
-        input[type='password'],
-        input[type='search'],
-        input[type='tel'],
-        input[type='text'],
-        input[type='time'],
-        input[type='url'], {
-          max-width: 100px;
-          width: auto;
+      .filter_form_field.select_and_search {
+        >input, >select {
+          background-color: $bg-inputs;
+          width: 49%;
+        }
+        >input {
+          margin: 0 0 0 1%;
+        }
+        >select {
+          margin: 0 1% 0 0;
         }
       }
-      .filter_form_field.select_and_search select {
-        background-color: $bg-inputs;
+      .filter_form_field.filter_date_range {
+        >input {
+          background-color: $bg-inputs;
+          width: 49%;
+          margin: 0 1% 0 0;
+        }
+        >input:last-child {
+          margin: 0 0 0 1%;
+        }
       }
       .buttons {
         clear: both;
@@ -286,7 +291,7 @@ body.active_admin {
         }
       }
     }
-    > fieldset.inputs, .ui-tabs-panel > fieldset.inputs {
+    > fieldset.inputs, div.c-card__item > fieldset.inputs, .ui-tabs-panel > fieldset.inputs {
       > legend {
         @extend .c-card__item;
         @extend .c-card__item--brand;
@@ -377,6 +382,9 @@ body.active_admin {
         display: inline-block;
         margin-right: 10px;
       }
+    }
+    div.c-card__item > fieldset.inputs {
+      margin-bottom: 0;
     }
 
     // tabs
@@ -735,6 +743,11 @@ body.active_admin {
         margin: 0;
       }
     }
+    .section {
+      background: transparent;
+      box-shadow: none;
+      margin-bottom: 0;
+    }
   }
 
   // admin content
@@ -750,10 +763,16 @@ body.active_admin {
   .ui-dialog {
     button.ui-button {
       @extend .button-base;
-      // margin-right: 10px;
-      &:hover {
+      margin-right: 10px;
+      &:hover, &.ui-widget:hover {
         background-image: none;
       }
+      &.ui-dialog-titlebar-close {
+        display: none;
+      }
+    }
+    .ui-dialog-content {
+      min-height: auto;
     }
     .ui-dialog-titlebar {
       display: flex;
@@ -762,8 +781,9 @@ body.active_admin {
         align-self: center
       }
     }
-    // .ui-dialog-buttonset
-    //   text-align: right
+    // .ui-dialog-buttonset {
+    //   text-align: right;
+    // }
   }
 
   // footer

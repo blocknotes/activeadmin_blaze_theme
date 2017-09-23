@@ -7,7 +7,7 @@ Features:
 - CSS only theme with clean UI
 - compact nested forms
 - [customizable](#customize): colors, sidebar position, scroll on cells
-- custom controls / components: [toggle](#toggle), [Sidebar menu](#sidebar-menu), [Readonly field](#readonly-field)
+- custom controls / components: [toggle](#toggle), [Sidebar menu](#sidebar-menu), [Accordion](#accordion), [Readonly field](#readonly-field)
 - Blaze CSS [widgets](#blaze-widgets)
 
 ## Install
@@ -105,30 +105,53 @@ Standard checkbox with label on the left:
 A sidebar menu (*priority* option permit to put the sidebar above the filters):
 
 ```rb
-  sidebar :help, priority: 0 do
-    ul class: 'blaze-menu' do
-      li do
-        link_to 'Menu item 1', admin_root_path
-      end
-      li do
-        link_to 'Menu item 2', admin_root_path
-      end
-      li do
-        link_to 'Menu item 3', admin_root_path
-      end
+sidebar :help, priority: 0 do
+  ul class: 'blaze-menu' do
+    li do
+      link_to 'Menu item 1', admin_root_path
+    end
+    li do
+      link_to 'Menu item 2', admin_root_path
+    end
+    li do
+      link_to 'Menu item 3', admin_root_path
     end
   end
+end
 ```
 
 ![menu](extra/screenshot4.jpg)
 
+### Accordion
+
+An accordion group in a form:
+
+```rb
+f.accordion_group do
+  f.accordion 'First accordion' do
+    f.inputs for: [:detail, f.object.detail || Detail.new] do |f2|
+      f2.input :meta_title
+      f2.input :meta_keywords
+    end
+  end
+  f.accordion 'Second accordion' do
+    f.inputs for: [:more_detail, f.object.morel_detail || Detail.new] do |f2|
+      f2.input :meta_title
+      f2.input :meta_keywords
+    end
+  end
+end
+```
+
 ### Readonly field
 
-Some readonly fields in form:
+Some readonly fields in a form:
 
-`f.readonly 'Code', 'Automatically set after save'`
+`f.readonly :position`
 
-`f.readonly :position, f.object.position`
+`f.readonly :position, f.object.position * 2`
+
+`f.readonly 'Code', 'Automatically set after save', class: 'a-wrapper-class'`
 
 `f.readonly nil, 'Value only, no label'`
 

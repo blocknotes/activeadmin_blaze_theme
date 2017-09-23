@@ -1,3 +1,3 @@
 module ActiveAdminBlazeTheme
-  VERSION = '0.5.4'
+  VERSION = '0.5.6'
 end
