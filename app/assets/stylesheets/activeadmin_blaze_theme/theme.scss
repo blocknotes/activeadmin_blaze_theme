@@ -1,3 +1,4 @@
+@import 'icomoon';
 @import 'blaze/blaze';
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
@@ -674,6 +675,18 @@ body.active_admin {
       border-bottom: 0 none;
     }
   }
+  .col-actions {
+    padding: 1px 2px 0 6px;
+    vertical-align: middle;
+    a.c-button {
+      color: #222;
+      margin-right: 1px;
+      margin-left: 1px;
+    }
+    // .table_actions {
+    //   text-align: center;
+    // }
+  }
 
   // title bar
   #title_bar {
@@ -768,7 +781,8 @@ body.active_admin {
         background-image: none;
       }
       &.ui-dialog-titlebar-close {
-        display: none;
+        // display: none;  // hides close button
+        margin-right: 0;
       }
     }
     .ui-dialog-content {
