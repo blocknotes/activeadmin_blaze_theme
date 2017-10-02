@@ -90,10 +90,6 @@ body.active_admin {
     textarea {
       padding: 6px;
     }
-    .selectize-input {
-      line-height: $height-inputs;
-      padding-left: 8px;
-    }
     abbr {
       padding-left: 3px;
     }
@@ -888,6 +884,24 @@ body.active_admin {
     margin-bottom: 4px;
   }
 
+  // special components
+  .filter_form .select-one-inputs {
+    display: flex;
+    >input[type="text"], >select {
+      width: 49%;
+    }
+    >input[type="text"] {
+      margin: 0 1% 0 0;
+    }
+    select {
+      margin: 0 0 0 1%;
+    }
+  }
+  .selectize.input > .selectize-control > .selectize-input {
+    padding-left: 4px;
+    padding-top: 3px;
+  }
+
   // optional customizations
   .compact_titlebar {
     white-space: initial;
@@ -916,5 +930,13 @@ body.active_admin {
     min-width: 450px;
     width: auto;
     // width: calc(80% - 22px);
+  }
+  .no_rounded {
+    * {
+      border-radius: 0;
+    }
+    .action_items span.action_item > a {
+      border-radius: 0;
+    }
   }
 }

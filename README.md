@@ -6,7 +6,7 @@ Features:
 
 - CSS only theme with clean UI
 - compact nested forms
-- [customizable](#customize): colors, sidebar position, scroll on cells
+- [customizable](#customize) options: colors, sidebar position, squared style, scroll on cells
 - custom controls / components: [toggle](#toggle), [Sidebar menu](#sidebar-menu), [Accordion](#accordion), [Readonly field](#readonly-field)
 - Blaze CSS [widgets](#blaze-widgets)
 
@@ -63,6 +63,14 @@ $text-shadow: #000 !default;
 ```css
 #active_admin_content.with_sidebar {
   @extend .sidebar_left;
+}
+```
+
+- Squared style (no rounded borders):
+
+```css
+#active_admin_content, .active_admin #title_bar {
+  @extend .no_rounded;
 }
 ```
 
