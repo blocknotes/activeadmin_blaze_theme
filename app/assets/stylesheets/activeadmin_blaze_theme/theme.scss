@@ -883,6 +883,42 @@ body.active_admin {
   .sidebar_section .blaze-menu {
     margin-bottom: 4px;
   }
+  .blaze-table {
+    @extend .c-table;
+    // @extend .c-table--striped;
+    // @extend .c-table--condensed;
+    >thead {
+      @extend .c-table__head;
+      >tr {
+        @extend .c-table__row;
+        @extend .c-table__row--heading;
+        >th {
+          @extend .c-table__cell;
+        }
+      }
+    }
+    >tbody {
+      @extend .c-table__body;
+      >tr {
+        @extend .c-table__row;
+        >td {
+          @extend .c-table__cell;
+        }
+      }
+    }
+    &.table-bordered {
+      border: 1px solid #ddd;
+      &.table-rows {
+        border-bottom: 0 none;
+      }
+    }
+    &.table-rows >tbody >tr {
+      border-bottom: 1px solid #ddd;
+    }
+    &.table-striped >tbody >tr.even {
+      background: #f4f4f4;
+    }
+  }
 
   // special components
   .filter_form .select-one-inputs {

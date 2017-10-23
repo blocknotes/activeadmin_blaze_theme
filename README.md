@@ -7,7 +7,7 @@ Features:
 - CSS only theme with clean UI
 - compact nested forms
 - [customizable](#customize) options: colors, sidebar position, squared style, scroll on cells
-- custom controls / components: [toggle](#toggle), [Sidebar menu](#sidebar-menu), [Accordion](#accordion), [Readonly field](#readonly-field)
+- custom controls / components: [toggle](#toggle), [Sidebar menu](#sidebar-menu), [Accordion](#accordion), [Readonly field](#readonly-field), [Styled table](#styled-table)
 - Blaze CSS [widgets](#blaze-widgets)
 
 ## Install
@@ -162,6 +162,16 @@ Some readonly fields in a form:
 `f.readonly 'Code', 'Automatically set after save', class: 'a-wrapper-class'`
 
 `f.readonly nil, 'Value only, no label'`
+
+### Styled table
+
+Table styles:
+
+```ruby
+table_for User.all, class: 'blaze-table table-rows table-striped' do
+  # ...
+end
+```
 
 ## Blaze widgets
 
