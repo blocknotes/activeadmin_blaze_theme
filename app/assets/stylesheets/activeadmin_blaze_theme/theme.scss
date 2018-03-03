@@ -577,6 +577,9 @@ body.active_admin {
     .sidebar_section {
       margin-bottom: 20px;
     }
+    .filter_form .selectize-control > .selectize-input {
+      width: 100%;
+    }
   }
   #active_admin_content > #sidebar, #active_admin_content > #main_content_wrapper {
     float: none;
@@ -812,6 +815,9 @@ body.active_admin {
   }
 
   // misc
+  a.member_link {
+    text-decoration: none;
+  }
   .download_links > a {
     @extend .c-button;
     @extend .c-button--info;
@@ -837,9 +843,20 @@ body.active_admin {
       }
     }
   }
+
   // textarea comments
   #active_admin_comment_body {
     width: 100%;
+  }
+
+  // comments
+  .comments {
+    .actions {
+      padding: 0;
+    }
+    .pagination_information {
+      float: none;
+    }
   }
 
   // boolean values
@@ -968,10 +985,7 @@ body.active_admin {
     // width: calc(80% - 22px);
   }
   .no_rounded {
-    * {
-      border-radius: 0;
-    }
-    .action_items span.action_item > a {
+    *, .action_items span.action_item > a, .panel {
       border-radius: 0;
     }
   }
