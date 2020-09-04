@@ -1,9 +1,8 @@
 # Active Admin Blaze Theme [![Gem Version](https://badge.fury.io/rb/activeadmin_blaze_theme.svg)](https://badge.fury.io/rb/activeadmin_blaze_theme)
 
-A theme for Active Admin using [Blaze CSS](http://blazecss.com/)
+A theme for Active Admin using [Blaze CSS](http://blazecss.com/).
 
 Features:
-
 - CSS only theme with clean UI
 - compact nested forms
 - [customizable](#customize) options: colors, sidebar position, squared style, scroll on cells
@@ -11,20 +10,12 @@ Features:
 - Blaze CSS [widgets](#blaze-widgets)
 
 ## Install
-
-- Add to your Gemfile:
-
-`gem 'activeadmin_blaze_theme'`
-
+- Add to your Gemfile: `gem 'activeadmin_blaze_theme'`
 - Execute bundle
-
-- Add at the end of your ActiveAdmin styles (_app/assets/stylesheets/active_admin.scss_):
-
-`@import "activeadmin_blaze_theme/theme";`
+- Add at the end of your Active Admin styles (_app/assets/stylesheets/active_admin.scss_): `@import "activeadmin_blaze_theme/theme";`
 
 ## Customize
-
-- To change colors add before your ActiveAdmin styles (_app/assets/stylesheets/active_admin.scss_):
+- To change colors add before your Active Admin styles (_app/assets/stylesheets/active_admin.scss_):
 
 ```css
 // blaze colors
@@ -58,7 +49,7 @@ $height-titlebar: 38px !default;
 $text-shadow: #000 !default;
 ```
 
-- To move sidebar on the left add to your ActiveAdmin styles (after blaze theme import):
+- To move sidebar on the left add to your Active Admin styles (after blaze theme import):
 
 ```css
 #active_admin_content.with_sidebar {
@@ -93,7 +84,6 @@ body.active_admin .cke {
 ## Custom fields / components
 
 ### Toggle
-
 In *form* \ *inputs* block:
 
 `f.input :boolean, as: :blaze_toggle`
@@ -109,7 +99,6 @@ Standard checkbox with label on the left:
 `f.input :boolean, as: :blaze_toggle, input_html: { simple_checkbox: true }`
 
 ### Sidebar menu
-
 A sidebar menu (*priority* option permit to put the sidebar above the filters):
 
 ```rb
@@ -131,7 +120,6 @@ end
 ![menu](extra/screenshot4.jpg)
 
 ### Accordion
-
 An accordion group in a form:
 
 ```rb
@@ -152,7 +140,6 @@ end
 ```
 
 ### Readonly field
-
 Some readonly fields in a form:
 
 `f.readonly :position`
@@ -164,7 +151,6 @@ Some readonly fields in a form:
 `f.readonly nil, 'Value only, no label'`
 
 ### Styled table
-
 Table styles:
 
 ```ruby
@@ -174,8 +160,7 @@ end
 ```
 
 ## Blaze widgets
-
-See components avaible in Blaze CSS [docs](http://blazecss.com/components/buttons/).
+See components available in Blaze CSS [docs](http://blazecss.com/components/buttons/).
 
 Badge example:
 
@@ -197,8 +182,10 @@ div class: 'c-progress' do
 end
 ```
 
-## Screenshots
+## Notes
+- To use this plugins with Active Admin 1.x please use the version [0.5.12](https://github.com/blocknotes/activeadmin_blaze_theme/releases/tag/v0.5.12)
 
+## Screenshots
 Index:
 
 ![index](extra/screenshot1.jpg)
@@ -212,15 +199,12 @@ Show - sidebar on the left:
 ![edit](extra/screenshot3.jpg)
 
 ## Do you like it? Star it!
-
 If you use this component just star it. A developer is more motivated to improve a project when there is some interest.
 
 Take a look at [other ActiveAdmin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source) that I made if you are curious.
 
 ## Contributors
-
-- [Mattia Roccoberton](http://blocknot.es) - creator, maintainer
+- [Mattia Roccoberton](http://blocknot.es): author
 
 ## License
-
-[MIT](LICENSE.txt)
+The gem is available as open-source under the terms of the [MIT](LICENSE.txt).

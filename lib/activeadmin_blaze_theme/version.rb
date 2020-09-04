@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ActiveAdminBlazeTheme
-  VERSION = '0.5.12'
+  VERSION = '0.5.14'
 end
