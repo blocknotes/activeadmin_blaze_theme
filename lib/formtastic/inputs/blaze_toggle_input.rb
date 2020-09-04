@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Formtastic
   module Inputs
     class BlazeToggleInput < Formtastic::Inputs::BooleanInput
@@ -15,8 +17,8 @@ module Formtastic
       def to_html
         input_wrapping do
           toggle_label <<
-          hidden_field_html <<
-          toggle_checkbox
+            hidden_field_html <<
+            toggle_checkbox
         end
       end
 
@@ -36,18 +38,20 @@ module Formtastic
       end
 
       def label_html_options
-        classes = input_html_options[:simple_checkbox] ? [] : [ 'c-toggle', input_html_options[:toggle_class] ]
-        super.merge( for: input_html_options[:id], class: classes - ['label'] )
+        classes = input_html_options[:simple_checkbox] ? [] : ['c-toggle', input_html_options[:toggle_class]]
+        super.merge(for: input_html_options[:id], class: classes - ['label'])
       end
 
       def label_with_embedded_checkbox
-        check_box_html << "" << ( input_html_options[:simple_checkbox] ? '' : toggle_html )  # << label_text
+        check_box_html << "" << (input_html_options[:simple_checkbox] ? '' : toggle_html)  # << label_text
       end
 
       def toggle_html
-        template.content_tag( :div, Formtastic::Util.html_safe(
-          template.content_tag( :div, '', class: 'c-toggle__handle' )
-        ), class: 'c-toggle__track' )
+        template.content_tag(
+          :div,
+          Formtastic::Util.html_safe(template.content_tag(:div, '', class: 'c-toggle__handle')),
+          class: 'c-toggle__track'
+        )
       end
     end
   end

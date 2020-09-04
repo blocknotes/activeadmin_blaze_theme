@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'activeadmin/views/activeadmin_form'
 require 'activeadmin_blaze_theme/version'
 # require 'formtastic/inputs/blaze_array_input'
@@ -11,7 +13,7 @@ module ActiveAdminBlazeTheme
 end
 
 ActiveAdmin::Views::IndexAsTable::IndexTableFor::TableActions.class_eval do
-  def item *args
+  def item(*args)
     cl = args[2][:class]
     if cl.include? 'view_link'
       args[0] = '<span class="icon-eye"></span> '.html_safe + args[0]
@@ -23,6 +25,6 @@ ActiveAdmin::Views::IndexAsTable::IndexTableFor::TableActions.class_eval do
       args[0] = '<span class="icon-bin"></span> '.html_safe + args[0]
       args[2][:class] += ' c-button c-button--ghost-error u-xsmall'
     end
-    text_node link_to *args
+    text_node link_to(*args)
   end
 end

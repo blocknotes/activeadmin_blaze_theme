@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin::Views::ActiveAdminForm.class_eval do
   def accordion( title, &block )
     @accordion_id = @accordion_id ? ( @accordion_id + 1 ) : 1
@@ -15,8 +17,10 @@ ActiveAdmin::Views::ActiveAdminForm.class_eval do
   end
 
   def readonly( field, value = nil, options = {} )
+    field_value = value.nil? ? nil : raw(value)
+    field_value ||= (field && object.respond_to?(field) ? object.send(field) : '')
     cl = 'readonly-field'
-    cl += ' ' + options[:class] if options[:class]
+    cl += " #{options[:class]}" if options[:class]
     li class: cl do
       if !field.blank?
         label field, for: nil, class: 'field_label'
@@ -24,7 +28,7 @@ ActiveAdmin::Views::ActiveAdminForm.class_eval do
         span '&nbsp;'.html_safe, class: 'field_label'
       end
       div do
-        span ( value.nil? ? ( field && object.respond_to?( field ) ? object.send( field ) : '' ) : raw( value ) ), class: 'field_value'
+        span field_value, class: 'field_value'
       end
     end
   end
