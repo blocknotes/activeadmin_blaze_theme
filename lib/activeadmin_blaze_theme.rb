@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'activeadmin'
 require 'activeadmin/views/activeadmin_form'
 require 'activeadmin_blaze_theme/version'
 # require 'formtastic/inputs/blaze_array_input'
