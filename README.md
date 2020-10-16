@@ -1,4 +1,5 @@
-# Active Admin Blaze Theme [![Gem Version](https://badge.fury.io/rb/activeadmin_blaze_theme.svg)](https://badge.fury.io/rb/activeadmin_blaze_theme)
+# Active Admin Blaze Theme
+[![Gem Version](https://badge.fury.io/rb/activeadmin_blaze_theme.svg)](https://badge.fury.io/rb/activeadmin_blaze_theme) [![CircleCI](https://circleci.com/gh/blocknotes/activeadmin_blaze_theme.svg?style=svg)](https://circleci.com/gh/blocknotes/activeadmin_blaze_theme)
 
 A theme for Active Admin using [Blaze CSS](http://blazecss.com/).
 
@@ -17,7 +18,7 @@ Features:
 ## Customize
 - To change colors add before your Active Admin styles (_app/assets/stylesheets/active_admin.scss_):
 
-```css
+```scss
 // blaze colors
 $color-brand: #2C3E50;
 $color-info: #4dabf5;
@@ -51,7 +52,7 @@ $text-shadow: #000 !default;
 
 - To move sidebar on the left add to your Active Admin styles (after blaze theme import):
 
-```css
+```scss
 #active_admin_content.with_sidebar {
   @extend .sidebar_left;
 }
@@ -59,7 +60,7 @@ $text-shadow: #000 !default;
 
 - Squared style (no rounded borders):
 
-```css
+```scss
 #active_admin_content, .active_admin #title_bar {
   @extend .no_rounded;
 }
@@ -67,14 +68,14 @@ $text-shadow: #000 !default;
 
 - More options:
 
-```css
+```scss
 // scrollable table cells
 body.active_admin .index_content table {
   @extend .scrollable_cells;
 }
 ```
 
-```css
+```scss
 // fix ckeditor width
 body.active_admin .cke {
   @extend .ckeditor_width_fix
@@ -86,22 +87,28 @@ body.active_admin .cke {
 ### Toggle
 In *form* \ *inputs* block:
 
-`f.input :boolean, as: :blaze_toggle`
+```ruby
+f.input :boolean, as: :blaze_toggle
+```
 
 To change toggle color:
 
-`f.input :boolean, as: :blaze_toggle, input_html: { toggle_class: 'c-toggle--brand' }`
+```ruby
+f.input :boolean, as: :blaze_toggle, input_html: { toggle_class: 'c-toggle--brand' }
+```
 
 Available: `c-toggle--brand, c-toggle--info, c-toggle--warning, c-toggle--success, c-toggle--error`
 
 Standard checkbox with label on the left:
 
-`f.input :boolean, as: :blaze_toggle, input_html: { simple_checkbox: true }`
+```ruby
+f.input :boolean, as: :blaze_toggle, input_html: { simple_checkbox: true }
+```
 
 ### Sidebar menu
 A sidebar menu (*priority* option permit to put the sidebar above the filters):
 
-```rb
+```ruby
 sidebar :help, priority: 0 do
   ul class: 'blaze-menu' do
     li do
@@ -122,7 +129,7 @@ end
 ### Accordion
 An accordion group in a form:
 
-```rb
+```ruby
 f.accordion_group do
   f.accordion 'First accordion' do
     f.inputs for: [:detail, f.object.detail || Detail.new] do |f2|
@@ -142,13 +149,21 @@ end
 ### Readonly field
 Some readonly fields in a form:
 
-`f.readonly :position`
+```ruby
+f.readonly :position
+```
 
-`f.readonly :position, f.object.position * 2`
+```ruby
+f.readonly :position, f.object.position * 2
+```
 
-`f.readonly 'Code', 'Automatically set after save', class: 'a-wrapper-class'`
+```ruby
+f.readonly 'Code', 'Automatically set after save', class: 'a-wrapper-class'
+```
 
-`f.readonly nil, 'Value only, no label'`
+```ruby
+f.readonly nil, 'Value only, no label'
+```
 
 ### Styled table
 Table styles:
@@ -187,21 +202,18 @@ end
 
 ## Screenshots
 Index:
-
 ![index](extra/screenshot1.jpg)
 
 Edit:
-
 ![edit](extra/screenshot2.jpg)
 
 Show - sidebar on the left:
-
 ![edit](extra/screenshot3.jpg)
 
 ## Do you like it? Star it!
 If you use this component just star it. A developer is more motivated to improve a project when there is some interest.
 
-Take a look at [other ActiveAdmin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source) that I made if you are curious.
+Take a look at [other Active Admin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source) if you are curious.
 
 ## Contributors
 - [Mattia Roccoberton](http://blocknot.es): author
