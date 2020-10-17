@@ -1,6 +1,12 @@
 body.active_admin {
   nav.pagination {
     @extend .c-pagination;
+
+    float: none;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
     span > a {
       background: transparent;
       background-image: none;
@@ -12,35 +18,42 @@ body.active_admin {
       margin: 0 auto;
       text-shadow: none;
     }
+
     a:hover, span:hover > a {
       background: transparent;
       background-image: none;
-      color: #fff;
+      color: #888;
       text-shadow: none;
     }
+
     .first, .prev, .next, .last {
-      @extend .c-pagination__control;
       display: inline-block;
       margin-right: 2px;
       padding: 0;
     }
+
     .prev {
       margin-right: 16px;
     }
+
     .next {
       margin-left: 14px;
     }
+
     .page {
-      // @extend .c-pagination__page;
       display: inline-block;
       margin-right: 2px;
       padding: 0;
       &.current {
-        // @extend .c-pagination__page--current;
+        background-color: transparent;
         background-image: none;
+        border-radius: 20px;
+        color: #000;
         padding: 6px 10px;
+        text-shadow: none;
       }
       &.current:hover {
+        background-color: transparent;
         background-image: none;
       }
       &.gap {
