@@ -1,0 +1,381 @@
+body.active_admin {
+  form {
+    // inputs
+    input[type='datetime-local'],
+    input[type='email'],
+    input[type='number'],
+    input[type='password'],
+    input[type='search'],
+    input[type='tel'],
+    input[type='text'],
+    input[type='time'],
+    input[type='url'],
+    select,
+    textarea {
+      @extend .c-field;
+      background-color: $bg-inputs;
+      display: inline-block;
+      height: $height-inputs;
+      padding: 1px 6px;
+    }
+    input[type='radio'] {
+      margin-right: 0.4em;
+    }
+    input[type='range'] {
+      @extend .c-range;
+      background: transparent;
+      display: inline-block;
+      height: $height-inputs;
+      min-width: 200px;
+      width: 30%;
+    }
+    select {
+      padding: 1px 5px;
+    }
+    select[multiple], textarea {
+      height: auto;
+    }
+    select.c-field:not([multiple]), select:not([multiple]) {
+      background: transparent;
+      -webkit-appearance: menulist;
+    }
+    textarea {
+      padding: 6px;
+    }
+    abbr {
+      padding-left: 3px;
+    }
+
+    // buttons
+    button,
+    input[type='button'],
+    input[type='submit'],
+    &.filter_form a.clear_filters_btn,
+    fieldset.buttons li.cancel a,
+    fieldset.actions li.cancel a {
+      @extend .button-base;
+
+      color: #f4f4f4;
+    }
+    .buttons, .actions {
+      button,
+      input[type='button'],
+      input[type='submit'] {
+        color: #f4f4f4;
+        margin-right: 10px;
+      }
+    }
+
+    button:hover,
+    input[type='button']:hover,
+    input[type='submit']:hover,
+    &.filter_form a.clear_filters_btn:hover,
+    fieldset.buttons li.cancel a:hover,
+    fieldset.actions li.cancel a:hover {
+      background-color: #aaa;
+      background-image: none;
+    }
+    > .actions {
+      margin: 5px 0 0 0;
+    }
+
+    // submits
+    input[type='submit'] {
+      @extend .c-button--success;
+
+      color: #f4f4f4;
+    }
+
+    // custom fields
+    .blaze_toggle {
+      label {
+        display: inline-block;
+      }
+      .field_with_errors {
+        display: inline;
+      }
+      .inline-errors {
+        margin-top: 0;
+      }
+    }
+    .readonly-field {
+      div {
+        display: inline-block;
+        line-height: $height-inputs;
+        min-width: 450px;
+      }
+      .field_label {
+        display: block;
+        float: left;
+        width: 20%;
+      }
+      .field_value {
+        border-bottom: 1px dashed #ccc;
+        display: inline-block;
+        width: 100%;
+        padding: 0 6px;
+      }
+    }
+
+    // filter forms
+    &.filter_form {
+      .filter_form_field {
+        > input, > select, .separator, .seperator {
+          float: left;
+        }
+        > label {
+          padding-top: 8px;
+        }
+        .separator, .seperator {
+          line-height: $height-inputs;
+        }
+      }
+      .filter_form_field.select_and_search {
+        >input, >select {
+          background-color: $bg-inputs;
+          width: 49%;
+        }
+        >input {
+          margin: 0 0 0 1%;
+        }
+        >select {
+          margin: 0 1% 0 0;
+        }
+      }
+      .filter_form_field.filter_date_range {
+        >input {
+          background-color: $bg-inputs;
+          width: 49%;
+          margin: 0 1% 0 0;
+        }
+        >input:last-child {
+          margin: 0 0 0 1%;
+        }
+      }
+      .buttons {
+        clear: both;
+        padding-top: 14px;
+      }
+    }
+
+    // fieldsets
+    fieldset {
+      &.buttons li, &.actions li {
+        float: none;
+        display: inline-block;
+      }
+      &.inputs {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        input[type='datetime-local'],
+        input[type='email'],
+        input[type='number'],
+        input[type='password'],
+        input[type='search'],
+        input[type='tel'],
+        input[type='text'],
+        input[type='time'],
+        input[type='url'],
+        select,
+        textarea {
+          background-color: $bg-inputs;
+          min-width: 450px;
+          width: auto;
+          // width: calc(80% - 22px);
+        }
+        // select {
+        //   background-image: none;
+        // }
+        label {
+          line-height: $height-inputs;
+        }
+        li.input.hidden {
+          padding: 0;
+        }
+        // .boolean > label {  // not working
+        //   @extend .c-field;
+        //   @extend .c-field--choice;
+        // }
+        .button {
+          @extend .button-base;
+          display: inline-block;
+          margin-left: 10px;
+          margin-top: 10px;
+          &:hover {
+            background-color: #aaa;
+            background-image: none;
+          }
+          &.has_many_add {
+            @extend .c-button--info;
+          }
+          &.has_many_remove {
+            @extend .c-button--error;
+          }
+        }
+        // .datepicker > input {
+        //   -webkit-appearance: menulist;
+        // }
+        .fragment {
+          input[type='datetime-local'],
+          input[type='email'],
+          input[type='number'],
+          input[type='password'],
+          input[type='search'],
+          input[type='tel'],
+          input[type='text'],
+          input[type='time'],
+          input[type='url'],
+          select {
+            min-width: auto;
+            width: auto;
+          }
+        }
+        .input.error select {
+          border: 1px solid $color-validation-error;
+        }
+      }
+      > ol {
+        padding: 0;
+        > li {
+          padding: 0 0 $inputs-spacing 0;
+          &.boolean label, &.blaze_toggle label {
+            float: none;
+          }
+          &.has_many_container {
+            padding: $form-padding;
+          }
+        }
+      }
+    }
+    > fieldset.inputs, div.c-card__item > fieldset.inputs, .ui-tabs-panel > fieldset.inputs {
+      > legend {
+        @extend .c-card__item;
+        @extend .c-card__item--brand;
+        border-radius: 5px 5px 0 0;
+        box-shadow: 0 0 1px rgba(17, 17, 17, 0.6), 0 5px 10px -3px rgba(17, 17, 17, 0.4);
+        color: $fg-box-title;
+        padding: 8px 11px;
+        text-shadow: $text-shadow 0 1px 0;
+        > span {
+          background-color: transparent;
+          background-image: none;
+          border: 0 none;
+          box-shadow: initial;
+          color: inherit;
+          margin: 0;
+          padding: 0;
+          text-shadow: inherit;
+        }
+      }
+      > ol {
+        @extend .c-card;
+        @extend .u-high;
+        background-color: $bg-form1;
+        border-radius: 0 0 5px 5px;
+        overflow: visible;
+        padding: $form-padding;
+        > .has_many_container {
+          background-color: $bg-form2;
+          ol {
+            background-color: $bg-form2;
+            // padding: 0;
+          }
+
+          // > .has_many_fields > ol {
+          //   background-color: $bg-form3;
+          //   > .has_many_container {
+          //     background-color: $bg-form3;
+          //   }
+          // }
+
+          //   > fieldset > ol > .has_many_container {
+          //     background-color: $bg-form3;
+          //     > fieldset > ol > .has_many_container {
+          //       background-color: $bg-form4;
+          //     }
+          //   }
+        }
+      }
+      .has_many_container {
+        @extend .c-card;
+        @extend .u-high;
+        // border-left: 2px solid lighten( $color-brand, 20% );
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+        > h3 {
+          @extend .c-card__item;
+          // @extend .c-card__item--info;
+          background: $bg-form-sub-headings;
+          margin-bottom: 2px;
+          margin-top: 0;
+          padding: 10px;
+        }
+        // ol {
+        //   border-left: 2px solid lighten( $color-brand, 20% );
+        //   padding: 10px 0 10px 10px;
+        // }
+        .input {
+          padding: 10px 0 0 10px;
+        }
+        .inputs {
+          border-bottom: 1px solid #ccc;
+          border-radius: 0;
+          margin: 0;
+          padding: 0 0 5px 0;
+          // padding: $form-padding;
+        }
+        // .has_many_fields {
+        //   margin: 0;
+        //   padding: 0;
+        // }
+        > .button {
+          margin-left: $form-padding;
+          margin-bottom: $form-padding;
+        }
+      }
+      .choices-group li.choice {
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+    div.c-card__item > fieldset.inputs {
+      margin-bottom: 0;
+    }
+
+    // tabs
+    .ui-tabs > .tab-content {
+      padding-bottom: 0;
+      padding-top: 25px;
+    }
+    .ui-tabs-nav {
+      li {
+        a {
+          background: #eee;
+          color: #555;
+        }
+        &:first-child a {
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
+        }
+        &:last-child a {
+          border-top-right-radius: 6px;
+          border-bottom-right-radius: 6px;
+        }
+        &.ui-tabs-active a {
+          color: #222;
+          border-color: #AAA;
+          background-image: none;
+          background-color: #fff;
+        }
+      }
+    }
+
+    // misc
+    a.c-button {
+      color: $fg-button-link;
+      text-decoration: none;
+    }
+  }
+}

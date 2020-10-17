@@ -1,0 +1,64 @@
+body.active_admin {
+  #sidebar {
+    background: $bg-sidebar;
+    min-height: calc(100vh - #{$height-topbar + $height-titlebar + 2 + 40});
+    padding: 0 15px;
+    .sidebar_section {
+      margin-bottom: 20px;
+    }
+    .filter_form .selectize-control > .selectize-input {
+      width: 100%;
+    }
+  }
+  #active_admin_content > #sidebar, #active_admin_content > #main_content_wrapper {
+    float: none;
+  }
+  .panel_contents {
+    @extend .c-card__item;
+    padding: 8px 10px 10px 10px;
+  }
+  .sidebar_section {
+    @extend .c-card;
+    @extend .u-high;
+    .filter_form_field {
+      input[type='datetime-local'],
+      input[type='email'],
+      input[type='number'],
+      input[type='password'],
+      input[type='search'],
+      input[type='tel'],
+      input[type='text'],
+      input[type='time'],
+      input[type='url'],
+      textarea {
+        background-color: $bg-inputs;
+        background-image: none;
+      }
+      select {
+        background-color: $bg-inputs;
+      }
+    }
+    > h3 {
+      @extend .c-card__item;
+      @extend .c-card__item--brand;
+      background-image: none;
+      border: 0 none !important;
+      color: $fg-box-title;
+      margin-bottom: 2px;
+      margin-top: 0;
+      padding: 8px 11px;
+      text-shadow: $text-shadow 0 1px 0;
+    }
+    h4 {
+      margin: 0;
+    }
+    input[type='submit'] {
+      @extend .c-button--info;
+
+      color: #f4f4f4;
+    }
+    ul {
+      margin: 0 0 8px 0;
+    }
+  }
+}

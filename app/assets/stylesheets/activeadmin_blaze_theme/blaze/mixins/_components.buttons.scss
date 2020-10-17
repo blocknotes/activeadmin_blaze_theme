@@ -1,83 +1,122 @@
-@import "settings.global";
+@import 'utilities.states';
 
-@mixin button-color($background-color: $button-background-color, $color: $button-color) {
-  border: $button-border;
-  background-color: $background-color;
-  color: $color;
+@mixin button-color {
+  color: var(--button-color);
+  background-color: var(--button-background-color);
+  border: 1px solid transparent;
 
   &.c-button--active {
-    background-color: darken($background-color, $color-tint);
+    filter: brightness(0.95);
   }
 
-  &:not(:disabled) {
-    &:hover {
-      background-color: lighten($background-color, $color-tint);
+  &:not(:disabled):not([disabled]) {
+    &:not(:active) {
+      &:hover {
+        filter: brightness(0.95);
+      }
     }
 
     &:focus {
-      border-color: $button-focus-border-color;
-      box-shadow: $button-focus-box-shadow;
+      border-color: var(--border-color-focus);
+      box-shadow: var(--box-shadow-focus);
     }
 
     &:active {
-      background-color: darken($background-color, $color-tint);
+      filter: brightness(0.9);
     }
   }
 }
 
-@mixin button-ghost($color: $button-ghost-color, $color-hover: $button-ghost-hover-color) {
-  border: $button-ghost-border-width $button-ghost-border-style $color;
-  background-color: transparent;
-  color: $color;
+@mixin button-ghost {
+  --button-background-color: transparent;
+
+  border: 1px solid var(--button-color);
 
   &.c-button--active {
-    border-color: darken($color, $color-tint);
-    background-color: darken($color, $color-tint);
-    color: $color-hover;
+    color: #fff;
+    background-color: var(--button-color);
+    border-color: 1px solid transparent;
   }
 
-  &:not(:disabled) {
-    &:hover {
-      background-color: $color;
-      color: $color-hover;
+  &:not(:disabled):not([disabled]) {
+    &:not(:active) {
+      &:hover {
+        color: #fff;
+        background-color: var(--button-color);
+        border-color: 1px solid transparent;
+      }
     }
 
     &:focus {
-      border-color: $button-focus-border-color;
-      box-shadow: $button-focus-box-shadow;
+      border-color: var(--border-color-focus);
+      box-shadow: var(--box-shadow-focus);
     }
 
-    &:active {
-      border-color: darken($color, $color-tint);
-      background-color: darken($color, $color-tint);
-      color: $color-hover;
+    &:active,
+    &[aria-current] {
+      color: #fff;
+      background-color: var(--button-color);
+      border-color: 1px solid transparent;
     }
   }
 }
 
 @mixin button {
   @include button-color;
+  @include disabled;
   display: inline-block;
   max-width: 100%;
-  margin: $button-margin;
-  padding: $button-padding;
-  border-radius: $button-border-radius;
-  outline: 0;
-  font-family: $button-font-family;
-  font-size: $button-font-size;
-  line-height: $button-line-height;
-  text-align: $button-text-align;
+  margin: 0;
+  padding: var(--spacing-small);
+  overflow: hidden;
+  font-size: 1em;
+  font-family: inherit;
+  line-height: normal;
+  white-space: nowrap;
+  text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;
-  white-space: $button-white-space;
-  cursor: pointer;
-  overflow: hidden;
   vertical-align: middle;
+  border-radius: var(--border-radius);
+  outline: 0;
+  -webkit-appearance: none;
   appearance: none;
   user-select: none;
+}
 
-  &:disabled {
-    cursor: not-allowed;
-    opacity: $button-disabled-opacity;
+@mixin button-nude {
+  @include disabled;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  background: inherit;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &:not(:disabled):not([disabled]) {
+    &:active {
+      background-color: transparent;
+    }
+
+    &:not(:active) {
+      &:focus {
+        border-color: var(--border-color-focus);
+        box-shadow: var(--box-shadow-focus);
+      }
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
   }
 }

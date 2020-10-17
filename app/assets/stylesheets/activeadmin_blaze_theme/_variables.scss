@@ -1,0 +1,46 @@
+// default colors
+$color-black: #111 !default;
+$color-grey: #B0BEC5 !default;
+$color-white: #FFF !default;
+$color-beige: #F2F2EA !default;
+$color-red: #F44336 !default;
+$color-pink: #E91E63 !default;
+$color-purple: #9C27B0 !default;
+$color-blue: #2196F3 !default;
+$color-green: #4CAF50 !default;
+$color-cyan: #00BCD4 !default;
+$color-yellow: #FFEB3B !default;
+$color-orange: #FF9800 !default;
+$color-brown: #795548 !default;
+
+$color-brand: #2C3E50 !default;
+$color-info: $color-blue !default;
+$color-warning: $color-orange !default;
+$color-success: $color-green !default;
+$color-error: $color-red !default;
+
+// main variables
+$bg-footer: #dfdfdf !default;             // bg footer bar
+$bg-form1: #f4f4f4 !default;              // bg 1st level forms
+$bg-form2: darken($bg-form1, 3%) !default;  // bg 2nd level forms (nested)
+$bg-form3: darken($bg-form1, 6%) !default;  // bg 3rd level forms (nested)
+$bg-form4: darken($bg-form1, 9%) !default;  // bg 4th level forms (nested)
+$bg-form-sub-headings: lighten( $color-brand, 64% ) !default;  // bg nested forms title
+$bg-header: $color-brand !default;          // bg header bar
+$bg-inputs: #fff !default;                // bg forms inputs
+$bg-menu-active: #7b929e !default;        // bg menu item current / hover
+$bg-sidebar: #efefef;                     // bg sidebar
+$fg-box-title: #fff !default;
+$fg-button-link: #fff !default;
+$fg-menu-items: #f8f8f8 !default;
+$fg-table-borders: #e4e4e4 !default;
+$fg-table-link: #eee !default;
+
+// other variables
+$color-validation-error: #932419 !default;
+$form-padding: 10px !default;
+$inputs-spacing: 10px !default;
+$height-inputs: 26px !default;
+$height-topbar: 40px !default;
+$height-titlebar: 38px !default;
+$text-shadow: #000 !default;

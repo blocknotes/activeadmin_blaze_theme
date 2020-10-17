@@ -1,0 +1,15 @@
+body.active_admin {
+  #footer {
+    bottom: 0;
+    position: absolute;
+    background-color: $bg-footer;
+    line-height: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    > p {
+      margin: 0;
+      padding: 0;
+    }
+  }  
+}

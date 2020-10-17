@@ -1,0 +1,42 @@
+body.active_admin {
+  // main content
+  #main_content {
+    margin: 0;
+    padding: 25px 20px;
+    width: calc(100% - 270px);
+    .panel {
+      @extend .c-card;
+      @extend .u-high;
+      > h3 {
+        @extend .c-card__item;
+        @extend .c-card__item--brand;
+        background-image: none;
+        border: 0 none !important;
+        color: $fg-box-title;
+        margin: 0;
+        padding: 8px 11px;
+        text-shadow: $text-shadow 0 1px 0;
+      }
+      > .panel_contents .actions {
+        margin: 0;
+      }
+      table {
+        margin: 0;
+      }
+    }
+    .section {
+      background: transparent;
+      box-shadow: none;
+      margin-bottom: 0;
+    }
+  }
+
+  // admin content
+  #active_admin_content {
+    display: flex;
+    padding: 0;
+  }
+  &.logged_out #active_admin_content {  // devise forms
+    display: block;
+  }  
+}

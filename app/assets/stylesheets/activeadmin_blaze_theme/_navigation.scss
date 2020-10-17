@@ -1,0 +1,56 @@
+body.active_admin {
+  nav.pagination {
+    @extend .c-pagination;
+    span > a {
+      background: transparent;
+      background-image: none;
+      border: 0 none;
+      box-shadow: none;
+      color: initial;
+      cursor: pointer;
+      padding: 6px 10px;
+      margin: 0 auto;
+      text-shadow: none;
+    }
+    a:hover, span:hover > a {
+      background: transparent;
+      background-image: none;
+      color: #fff;
+      text-shadow: none;
+    }
+    .first, .prev, .next, .last {
+      @extend .c-pagination__control;
+      display: inline-block;
+      margin-right: 2px;
+      padding: 0;
+    }
+    .prev {
+      margin-right: 16px;
+    }
+    .next {
+      margin-left: 14px;
+    }
+    .page {
+      // @extend .c-pagination__page;
+      display: inline-block;
+      margin-right: 2px;
+      padding: 0;
+      &.current {
+        // @extend .c-pagination__page--current;
+        background-image: none;
+        padding: 6px 10px;
+      }
+      &.current:hover {
+        background-image: none;
+      }
+      &.gap {
+        border: 0 none;
+      }
+      &.gap:hover {
+        background-color: transparent;
+        color: initial;
+        cursor: default;
+      }
+    }
+  }
+}
