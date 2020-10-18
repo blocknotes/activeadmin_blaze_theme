@@ -10,6 +10,8 @@ Features:
 - custom controls / components: [toggle](#toggle), [Sidebar menu](#sidebar-menu), [Accordion](#accordion), [Readonly field](#readonly-field), [Styled table](#styled-table)
 - Blaze CSS [widgets](#blaze-widgets)
 
+See some [screenshots](#screenshots).
+
 ## Install
 - Add to your Gemfile: `gem 'activeadmin_blaze_theme'`
 - Execute bundle
@@ -128,8 +130,6 @@ sidebar :help, priority: 0 do
 end
 ```
 
-![menu](extra/screenshot4.jpg)
-
 ### Accordion
 An accordion group in a form:
 
@@ -206,13 +206,10 @@ end
 
 ## Screenshots
 Index:
-![index](extra/screenshot1.jpg)
+![index](extra/index.png)
 
 Edit:
-![edit](extra/screenshot2.jpg)
-
-Show - sidebar on the left:
-![edit](extra/screenshot3.jpg)
+![edit](extra/edit.png)
 
 ## Do you like it? Star it!
 If you use this component just star it. A developer is more motivated to improve a project when there is some interest.
