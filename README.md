@@ -1,7 +1,7 @@
 # Active Admin Blaze Theme
 [![Gem Version](https://badge.fury.io/rb/activeadmin_blaze_theme.svg)](https://badge.fury.io/rb/activeadmin_blaze_theme) [![CircleCI](https://circleci.com/gh/blocknotes/activeadmin_blaze_theme.svg?style=svg)](https://circleci.com/gh/blocknotes/activeadmin_blaze_theme)
 
-A theme for Active Admin using [Blaze CSS](http://blazecss.com/).
+A theme for Active Admin using [Blaze CSS](http://blazecss.com/) 9.x.
 
 Features:
 - CSS only theme with clean UI
@@ -212,9 +212,9 @@ Edit:
 ![edit](extra/edit.png)
 
 ## Do you like it? Star it!
-If you use this component just star it. A developer is more motivated to improve a project when there is some interest.
+If you use this component just star it. A developer is more motivated to improve a project when there is some interest. My other [Active Admin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source).
 
-Take a look at [other Active Admin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source) if you are curious.
+Or consider offering me a coffee, it's a small thing but it is greatly appreciated: [about me](https://www.blocknot.es/about-me).
 
 ## Contributors
 - [Mattia Roccoberton](http://blocknot.es): author
