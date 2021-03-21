@@ -49,7 +49,7 @@ module Formtastic
       def toggle_html
         template.content_tag(
           :div,
-          Formtastic::Util.html_safe(template.content_tag(:div, '', class: 'c-toggle__handle')),
+          template.content_tag(:div, '', class: 'c-toggle__handle'),
           class: 'c-toggle__track'
         )
       end
