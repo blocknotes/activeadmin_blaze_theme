@@ -13,12 +13,22 @@ Features:
 See some [screenshots](#screenshots).
 
 ## Install
-- Add to your Gemfile: `gem 'activeadmin_blaze_theme'`
-- Execute bundle
+- Add to your Gemfile: `gem 'activeadmin_blaze_theme'` (and execute `bundle`)
+
+If you installed Active Admin **without** Webpacker support:
+
 - Add at the end of your Active Admin styles (_app/assets/stylesheets/active_admin.scss_):
 
 ```scss
 @import "activeadmin_blaze_theme/theme";
+```
+
+If you are using Webpacker:
+
+- Add at the end of your Active Admin javascript pack (_app/javascript/packs/active_admin.js_):
+
+```js
+require('activeadmin_blaze_theme');
 ```
 
 ## Customize
