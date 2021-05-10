@@ -1,6 +1,6 @@
 # Active Admin Blaze Theme [![Gem Version](https://badge.fury.io/rb/activeadmin_blaze_theme.svg)](https://badge.fury.io/rb/activeadmin_blaze_theme) [![Specs](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs.yml)
 
-A theme for Active Admin using [Blaze CSS](http://blazecss.com/) 9.x.
+A theme for Active Admin using [Blaze CSS](http://blazecss.com) 3.x
 
 Features:
 
