@@ -74,7 +74,7 @@ body.active_admin {
     }
   }
   .index_as_table {
-    overflow-x: scroll;
+    overflow-x: auto;
   }
   .panel_contents table tr:last-child {
     > td, > th {
