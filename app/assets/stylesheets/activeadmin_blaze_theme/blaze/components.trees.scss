@@ -1,0 +1,47 @@
+@import "mixins/settings.global";
+
+.c-tree {
+  display: block;
+  margin: $tree-margin;
+  padding: $tree-padding;
+  list-style: none;
+
+  .c-tree {
+    padding: $tree-nested-padding;
+  }
+}
+
+.c-tree__item {
+  padding: $tree-item-padding;
+
+  &:before {
+    display: inline-block;
+    padding: $tree-item-indicator-padding;
+    transform-origin: 30% 50%;
+    color: $tree-item-indicator-color;
+    content: "–";
+  }
+}
+
+.c-tree__item--expandable {
+  &:before {
+    color: $tree-item-expandable-indicator-color;
+    content: "\276F";
+  }
+
+  .c-tree {
+    display: none;
+  }
+}
+
+.c-tree__item--expanded {
+  &:before {
+    transform: rotate(90deg);
+    color: $tree-item-expanded-indicator-color;
+    content: "\276F";
+  }
+
+  .c-tree {
+    display: block;
+  }
+}

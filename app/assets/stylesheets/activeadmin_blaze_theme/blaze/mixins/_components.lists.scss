@@ -1,0 +1,10 @@
+@import "settings.global";
+
+@mixin list--unstyled {
+  padding: $list-unstyled-padding;
+  list-style: $list-unstyled-list-style;
+}
+
+@mixin list--inline {
+  padding: $list-inline-padding;
+}

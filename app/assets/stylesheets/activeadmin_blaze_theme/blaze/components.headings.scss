@@ -1,0 +1,14 @@
+@import "mixins/settings.global";
+
+.c-heading,
+.c-heading__sub {
+  margin: $heading-margin;
+  padding: $heading-padding;
+  font-weight: $heading-font-weight;
+}
+
+.c-heading__sub {
+  padding: $heading-subheading-padding;
+  font-size: $heading-subheading-font-size;
+  opacity: $heading-subheading-opacity;
+}
