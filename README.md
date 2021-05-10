@@ -25,11 +25,14 @@ If you installed Active Admin **without** Webpacker support:
 
 If you are using Webpacker:
 
+- Add the component to the _package.json_: `yarn add blocknotes/activeadmin_blaze_theme`
 - Add at the end of your Active Admin javascript pack (_app/javascript/packs/active_admin.js_):
 
 ```js
 require('activeadmin_blaze_theme');
 ```
+
+- Sometimes it could be necessary to remove the _node_modules_ path a recreate it (`yarn install --check-files`), or to clean the tmp path: `bin/rails tmp:clear`
 
 ## Customize
 - To change colors add to your Active Admin styles (before **activeadmin_blaze_theme/theme** import):
