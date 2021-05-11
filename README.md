@@ -1,9 +1,9 @@
-# Active Admin Blaze Theme
-[![Gem Version](https://badge.fury.io/rb/activeadmin_blaze_theme.svg)](https://badge.fury.io/rb/activeadmin_blaze_theme) [![CircleCI](https://circleci.com/gh/blocknotes/activeadmin_blaze_theme.svg?style=svg)](https://circleci.com/gh/blocknotes/activeadmin_blaze_theme)
+# Active Admin Blaze Theme [![Gem Version](https://badge.fury.io/rb/activeadmin_blaze_theme.svg)](https://badge.fury.io/rb/activeadmin_blaze_theme) [![Specs](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs.yml)
 
 A theme for Active Admin using [Blaze CSS](http://blazecss.com/) 9.x.
 
 Features:
+
 - CSS only theme with clean UI
 - compact nested forms
 - [customizable](#customize) options: colors, sidebar position, squared style, scroll on cells
@@ -13,9 +13,10 @@ Features:
 See some [screenshots](#screenshots).
 
 ## Install
-- Add to your Gemfile: `gem 'activeadmin_blaze_theme'` (and execute `bundle`)
 
-If you installed Active Admin **without** Webpacker support:
+First, add to your Gemfile: `gem 'activeadmin_blaze_theme'` (and execute `bundle`)
+
+Then, if you installed Active Admin **without Webpacker** support (so using Sprockets):
 
 - Add at the end of your Active Admin styles (_app/assets/stylesheets/active_admin.scss_):
 
@@ -23,7 +24,7 @@ If you installed Active Admin **without** Webpacker support:
 @import "activeadmin_blaze_theme/theme";
 ```
 
-If you are using Webpacker:
+Otherwise, **with Webpacker**:
 
 - Add the component to the _package.json_: `yarn add blocknotes/activeadmin_blaze_theme`
 - Add at the end of your Active Admin javascript pack (_app/javascript/packs/active_admin.js_):
@@ -32,10 +33,21 @@ If you are using Webpacker:
 require('activeadmin_blaze_theme');
 ```
 
-- Sometimes it could be necessary to remove the _node_modules_ path a recreate it (`yarn install --check-files`), or to clean the tmp path: `bin/rails tmp:clear`
+- Another option is appending to _app/javascript/stylesheets/active_admin.scss_ (in this case the JS require line is not needed):
+
+```scss
+// ...
+// optionally add custom colors variables here
+@import "~activeadmin_blaze_theme/app/assets/stylesheets/activeadmin_blaze_theme/theme";
+```
+
+- Sometimes it could be necessary to remove the _node_modules_ path and recreate it (using `yarn install --check-files`) or to clean the tmp path: `bin/rails tmp:clear`
 
 ## Customize
-- To change colors add to your Active Admin styles (before **activeadmin_blaze_theme/theme** import):
+
+- Colors customization is available using some Sass variables;
+- With Sprockets: you need to update your Active Admin styles (before **activeadmin_blaze_theme/theme** import line);
+- With Webpacker: you need to import the theme using the Sass/Scss option as described above.
 
 ```scss
 // blaze colors
@@ -104,6 +116,7 @@ body.active_admin .cke {
 ## Custom fields / components
 
 ### Toggle
+
 In *form* \ *inputs* block:
 
 ```ruby
@@ -125,6 +138,7 @@ f.input :boolean, as: :blaze_toggle, input_html: { simple_checkbox: true }
 ```
 
 ### Sidebar menu
+
 A sidebar menu (*priority* option permit to put the sidebar above the filters):
 
 ```ruby
@@ -144,6 +158,7 @@ end
 ```
 
 ### Accordion
+
 An accordion group in a form:
 
 ```ruby
@@ -164,6 +179,7 @@ end
 ```
 
 ### Readonly field
+
 Some readonly fields in a form:
 
 ```ruby
@@ -192,6 +208,7 @@ end
 ```
 
 ## Blaze widgets
+
 See components available in Blaze CSS [docs](http://blazecss.com/components/buttons/).
 
 Badge example:
@@ -215,9 +232,11 @@ end
 ```
 
 ## Notes
+
 - To use this plugins with Active Admin 1.x please use the version [0.5.12](https://github.com/blocknotes/activeadmin_blaze_theme/releases/tag/v0.5.12)
 
 ## Screenshots
+
 Index:
 ![index](extra/index.png)
 
@@ -225,12 +244,15 @@ Edit:
 ![edit](extra/edit.png)
 
 ## Do you like it? Star it!
+
 If you use this component just star it. A developer is more motivated to improve a project when there is some interest. My other [Active Admin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source).
 
 Or consider offering me a coffee, it's a small thing but it is greatly appreciated: [about me](https://www.blocknot.es/about-me).
 
 ## Contributors
+
 - [Mattia Roccoberton](http://blocknot.es): author
 
 ## License
+
 The gem is available as open-source under the terms of the [MIT](LICENSE.txt).
