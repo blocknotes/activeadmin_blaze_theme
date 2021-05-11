@@ -1,16 +1,37 @@
-$screen-limits: (
-  xsmall: 20em,
-  small: 30em,
-  medium: 48em,
-  large: 64em,
-  xlarge: 78em,
-  super: 116em,
-);
+@import "settings.global";
 
-$screen-adjustment: 0.01 !default;
+@mixin screen--xsmall-and-up {
+  @media (min-width: #{map-get($screen-limits, xsmall)}) {
+    @content;
+  }
+}
 
-@mixin screen-and-up($size) {
-  @media (min-width: #{map-get($screen-limits, $size)}) {
+@mixin screen--small-and-up {
+  @media (min-width: #{map-get($screen-limits, small)}) {
+    @content;
+  }
+}
+
+@mixin screen--medium-and-up {
+  @media (min-width: #{map-get($screen-limits, medium)}) {
+    @content;
+  }
+}
+
+@mixin screen--large-and-up {
+  @media (min-width: #{map-get($screen-limits, large)}) {
+    @content;
+  }
+}
+
+@mixin screen--xlarge-and-up {
+  @media (min-width: #{map-get($screen-limits, xlarge)}) {
+    @content;
+  }
+}
+
+@mixin screen--super-and-up {
+  @media (min-width: #{map-get($screen-limits, super)}) {
     @content;
   }
 }

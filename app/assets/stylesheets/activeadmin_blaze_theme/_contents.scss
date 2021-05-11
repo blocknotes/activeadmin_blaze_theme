@@ -7,6 +7,7 @@ body.active_admin {
     .panel {
       @extend .c-card;
       @extend .u-high;
+      background: $bg-form1;
       > h3 {
         @extend .c-card__item;
         @extend .c-card__item--brand;
