@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Mattia Roccoberton']
   spec.email         = ['mat@blocknot.es']
   spec.summary       = 'ActiveAdmin Blaze Theme'
-  spec.description   = 'An ActiveAdmin theme which use Blaze CSS UI toolkit'
+  spec.description   = 'An ActiveAdmin theme based on Blaze CSS UI toolkit'
   spec.homepage      = 'https://github.com/blocknotes/activeadmin_blaze_theme'
   spec.license       = 'MIT'
 
