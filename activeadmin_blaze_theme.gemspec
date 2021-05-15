@@ -14,9 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/blocknotes/activeadmin_blaze_theme'
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.files         = Dir["{app,lib}/**/*", 'LICENSE.txt', 'README.md', 'index.js', 'package.json']
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'activeadmin', '~> 2.0'
