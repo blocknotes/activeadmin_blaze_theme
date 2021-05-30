@@ -22,7 +22,7 @@ ActiveAdmin::Views::ActiveAdminForm.class_eval do
     cl = 'readonly-field'
     cl += " #{options[:class]}" if options[:class]
     li class: cl do
-      if !field.blank?
+      if field.present?
         label field, for: nil, class: 'field_label'
       else
         span '&nbsp;'.html_safe, class: 'field_label'
