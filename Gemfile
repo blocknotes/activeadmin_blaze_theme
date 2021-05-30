@@ -10,7 +10,6 @@ group :development, :test do
   gem 'puma', '~> 4.3'
   gem 'rspec_junit_formatter', '~> 0.4'
   gem 'rspec-rails'
-  gem 'sassc', '~> 2.4'
   gem 'selenium-webdriver', '~> 3.142'
   gem 'sprockets-rails', '~> 3.2'
   gem 'sqlite3', '~> 1.4'
