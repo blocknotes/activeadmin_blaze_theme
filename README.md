@@ -252,6 +252,7 @@ Or consider offering me a coffee, it's a small thing but it is greatly appreciat
 ## Contributors
 
 - [Mattia Roccoberton](http://blocknot.es): author
+- The good guys that opened issues and pull requests from time to time
 
 ## License
 
