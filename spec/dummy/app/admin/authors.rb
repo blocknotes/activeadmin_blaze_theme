@@ -44,14 +44,17 @@ ActiveAdmin.register Author do
       f.input :avatar,
               as: :file,
               hint: (object.avatar.attached? ? "Current: #{object.avatar.filename}" : nil)
+
+      f.has_many :profile, allow_destroy: true do |ff|
+        ff.input :description
+      end
+
+      f.has_many :posts do |fp|
+        fp.input :title
+        fp.input :description
+      end
+
+      f.actions
     end
-    f.has_many :profile, allow_destroy: true do |ff|
-      ff.input :description
-    end
-    f.has_many :posts do |fp|
-      fp.input :title
-      fp.input :description
-    end
-    f.actions
   end
 end

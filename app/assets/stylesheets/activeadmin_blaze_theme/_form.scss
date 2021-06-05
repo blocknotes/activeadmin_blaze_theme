@@ -47,6 +47,7 @@ body.active_admin {
     }
 
     // buttons
+    a.button.has_many_add,
     button,
     input[type='button'],
     input[type='submit'],
@@ -66,6 +67,7 @@ body.active_admin {
       }
     }
 
+    a.button.has_many_add:hover,
     button:hover,
     input[type='button']:hover,
     input[type='submit']:hover,
@@ -75,6 +77,7 @@ body.active_admin {
       background-color: #aaa;
       background-image: none;
     }
+
     > .actions {
       margin: 5px 0 0 0;
     }
