@@ -3,9 +3,9 @@ name: Specs
 
 on:
   push:
-    branches: [master]
+    branches: [develop, master]
   pull_request:
-    branches: [master]
+    branches: [develop, master]
 
 jobs:
   test:
@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        ruby: ['2.5', '2.6', '2.7']
+        ruby: ['2.6', '2.7', '3.0']
 
     steps:
       - name: Checkout
@@ -26,7 +26,7 @@ jobs:
           bundler-cache: true
 
       - name: Run tests
-        run: bundle exec rake
+        run: bin/rspec --profile
 
       - name: Archive screenshots for failed tests
         uses: actions/upload-artifact@v2
