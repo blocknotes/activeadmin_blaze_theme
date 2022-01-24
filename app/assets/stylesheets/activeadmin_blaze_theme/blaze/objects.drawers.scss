@@ -30,7 +30,7 @@
   left: 0;
   width: $drawer-width-horizontal;
   height: auto;
-  margin-left: calc((100% - $drawer-width-horizontal) / 2);
+  margin-left: (100% - $drawer-width-horizontal) * 0.5;
   transform: translate(0, 0);
 }
 
