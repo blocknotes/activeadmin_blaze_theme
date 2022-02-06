@@ -1,5 +1,8 @@
 # Active Admin Blaze Theme
-[![gem version](https://badge.fury.io/rb/activeadmin_blaze_theme.svg)](https://badge.fury.io/rb/activeadmin_blaze_theme) [![gem downloads](https://badgen.net/rubygems/dt/activeadmin_blaze_theme)](https://rubygems.org/gems/activeadmin_blaze_theme) [![linters](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/linters.yml/badge.svg)](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/linters.yml) [![specs](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs.yml)
+[![gem version](https://badge.fury.io/rb/activeadmin_blaze_theme.svg)](https://badge.fury.io/rb/activeadmin_blaze_theme)
+[![gem downloads](https://badgen.net/rubygems/dt/activeadmin_blaze_theme)](https://rubygems.org/gems/activeadmin_blaze_theme)
+[![linters](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/linters.yml/badge.svg)](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/linters.yml)
+[![specs](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs.yml)
 
 A theme for Active Admin based on [Blaze CSS](http://blazecss.com) 3.x
 
@@ -21,6 +24,7 @@ First, add to your Gemfile: `gem 'activeadmin_blaze_theme'` (and execute `bundle
 
 Then, if you installed Active Admin **without Webpacker** support (so using Sprockets):
 
+- Add a SASS/SCSS gem to your Gemfile (ex. `gem 'sassc'`)
 - Add at the end of your Active Admin styles (_app/assets/stylesheets/active_admin.scss_):
 
 ```scss
