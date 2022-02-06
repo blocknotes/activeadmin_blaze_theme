@@ -3,13 +3,12 @@ name: Linters
 
 on:
   push:
-    branches:
-      - master
+    branches: [develop, master]
   pull_request:
+    branches: [develop, master]
 
 jobs:
-  reviewdog:
-    name: reviewdog
+  linters:
     runs-on: ubuntu-latest
 
     steps:
