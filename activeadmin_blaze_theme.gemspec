@@ -14,9 +14,14 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/blocknotes/activeadmin_blaze_theme'
   spec.license       = 'MIT'
 
+  spec.required_ruby_version = '>= 2.6.0'
+
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = spec.homepage
+  spec.metadata['rubygems_mfa_required'] = 'true'
+
   spec.files         = Dir["{app,lib}/**/*", 'LICENSE.txt', 'README.md', 'index.js', 'package.json']
   spec.require_paths = ['lib']
-  spec.metadata      = { "rubygems_mfa_required" => "true" }
 
   spec.add_runtime_dependency 'activeadmin', '~> 2.0'
 end
