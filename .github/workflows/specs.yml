@@ -1,11 +1,13 @@
 ---
-name: Tests
+name: Specs
 
 on:
   push:
-    branches: [develop, master]
+    branches:
+      - master
   pull_request:
-    branches: [develop, master]
+    branches:
+      - master
 
 jobs:
   tests:
@@ -14,9 +16,13 @@ jobs:
     strategy:
       matrix:
         ruby: ['2.6', '2.7', '3.0']
+        gemfile: ['rails60_activeadmin22', 'rails60_activeadmin', 'rails61_activeadmin29', 'rails61_activeadmin']
+
+    env:
+      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Set up Ruby
@@ -26,9 +32,9 @@ jobs:
           bundler-cache: true
 
       - name: Run tests
-        run: bin/rspec --profile
+        run: bundle exec rspec --profile
 
-      - name: Archive screenshots for failed tests
+      - name: On failure, archive screenshots as artifacts
         uses: actions/upload-artifact@v2
         if: failure()
         with:
