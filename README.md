@@ -2,7 +2,6 @@
 [![gem version](https://badge.fury.io/rb/activeadmin_blaze_theme.svg)](https://badge.fury.io/rb/activeadmin_blaze_theme)
 [![gem downloads](https://badgen.net/rubygems/dt/activeadmin_blaze_theme)](https://rubygems.org/gems/activeadmin_blaze_theme)
 [![linters](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/linters.yml/badge.svg)](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/linters.yml)
-[![specs Rails 6.0](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs_rails6.0.yml/badge.svg)](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs_rails6.0.yml)
 [![specs Rails 6.1](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs_rails6.1.yml/badge.svg)](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs_rails6.1.yml)
 [![specs Rails 7.0](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs_rails7.0.yml/badge.svg)](https://github.com/blocknotes/activeadmin_blaze_theme/actions/workflows/specs_rails7.0.yml)
 
@@ -251,6 +250,10 @@ Index:
 
 Edit:
 ![edit](extra/edit.png)
+
+## Changelog
+
+The changelog is available [here](CHANGELOG.md).
 
 ## Do you like it? Star it!
 
