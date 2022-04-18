@@ -31,6 +31,8 @@ body.active_admin {
   }
   .ui-datepicker {
     > .ui-datepicker-header {
+      background-color: $bg-header;
+      background-image: none;
       border-bottom: 0 none;
       border-radius: 0;
       height: auto;
