@@ -3,6 +3,11 @@
 
 An ActiveAdmin theme based on Blaze CSS UI toolkit.
 
+## v1.1.0 - 2022-04-18
+
+- Change ActiveAdmin dependency version range to support 3.x
+- Set minimum Ruby version to 2.7.0
+
 ## v1.0.0 - 2022-04-18
 
 - Set minimum Ruby version to 2.6.0

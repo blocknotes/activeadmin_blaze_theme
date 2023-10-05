@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    activeadmin_blaze_theme (1.0.0)
+    activeadmin_blaze_theme (1.1.0)
       activeadmin (>= 2.0, < 4)
 
 GEM
